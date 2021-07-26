@@ -1,78 +1,45 @@
-lang:                  en
-title:                 Hydejack
-copyright:             © 2021. All rights reserved.
+# Site settings
+title: Jekyll-Uno
+description: 'Jekyll-Uno - a minimal, responsive theme for Jekyll'
+url: 'https://minniie.github.io/'
+baseurl: ''
+remote_theme: joshgerdes/jekyll-uno
+# google_analytics: 'UA-XXXXXX-X'
+# disqus_shortname: 'your-disqus-name'
+# disable_landing_page: true
 
-accent_image:          /assets/img/sidebar-bg.jpg
-accent_color:          rgb(79,177,186)
-theme_color:           rgb(25,55,71)
+author:
+  name: 'Josh Gerdes'
+  email: josh@joshgerdes.com
+  twitter_username: joshgerdes
+  facebook_username: joshgerdes
+  github_username:  joshgerdes
+  linkedin_username:  joshgerdes
 
-google_fonts:          Roboto+Slab:700|Noto+Sans:400,400i,700,700i
-font:                  Noto Sans, Helvetica, Arial, sans-serif
-font_heading:          Roboto Slab, Helvetica, Arial, sans-serif
-font-code:             ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
 
-hydejack:
-  post_addons:         [about, newsletter, related, random, comments]
-  project_addons:      [about, newsletter, other, comments]
-
-  no_mark_external:    false
-  no_push_state:       false
-  no_drawer:           false
-  no_navbar:           false
-  no_search:           false
-  no_inline_css:       false
-  no_page_style:       false
-  no_break_layout:     true
-  no_toc:              false
-  no_third_column:     false
-  no_large_headings:   false
-  no_structured_data:  false
-  no_theme_color:      false
-  no_breadcrumbs:      false
-
-  use_lsi:             true
-  cookies_banner:      true
-  advertise:           true
-  hide_dates:          false
-  hide_last_modified:  false
-
-  dark_mode:
-    always:            false
-    dynamic:           true
-    sunrise:           6
-    sunset:            18
-    icon:              true
-
-  offline:
-    enabled:           false
-    cache_version:     1
-    precache_assets:
-      - /assets/img/swipe.svg
-
-optional_front_matter:
-  remove_originals:    true
-
-readme_index:
-  remove_originals:    true
-  with_frontmatter:    true
-
-relative_links:
-  collections:         true
-
-titles_from_headings:
-  strip_title:         true
-  collections:         true
-
-compress_html:
-  comments:            ["<!-- ", " -->"]
-  clippings:           all
-  endings:             all
-  ignore:
-    envs:              [development]
+# Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
+markdown: kramdown
+highlighter: rouge
 
 sass:
-  style:               compressed
-  
-remote_theme : mmistakes/minimal-mistakes
-url : "https://minniie.github.io"
-baseurl : ""
+    sass_dir: _sass
+    style: compressed
+
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+
+plugins: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
