@@ -45,16 +45,18 @@ line-height: 3.5
 #### hypothesis: 변수 or 확률변수의 값을 가정
 - h=p
 
-#### hypothesis testing: 가설이 진짜인지 검증 (?)<br>
+#### hypothesis testing: 가설이 진짜인지 검증 (?)
+<br>
 #### distribution(분포): 해당 확률변수의 모든 event와 그에 해당하는 확률값을 정의/요약
 - pmf, pdf 와 동일
 
-#### parameter: distribution 이 closed form 일 경우(?) 그 식을 결정하는 값들<br>
+#### parameter: distribution 이 closed form 일 경우(?) 그 식을 결정하는 값들
+<br>
 #### expectation(기댓값):
 - if X == variable, X 의 값을 이미 알고 있음
 - if X == random variable, X 의 값을 모르고 있음<br>
-<span style="line-height: 1.0;"> ○ 이때 대신에 X 의 기댓값을 알수있음</span>
-<span style="line-height: 1.0;"> ○ X 가 가지는 모든 event x * event x 가 발생할 확률</span>
+<span style="line-height: 1.5;"> ○ 이때 대신에 X 의 기댓값을 알수있음</span>
+<span style="line-height: 1.5;"> ○ X 가 가지는 모든 event x * event x 가 발생할 확률</span>
 - $E_{X\sim P} (X)$: random variable X 는 probability distribution P 를 따른다
 
 #### mean: 해당 확률변수의 기댓값
