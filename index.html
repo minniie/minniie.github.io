@@ -54,7 +54,8 @@ layout: default
     
     <h5 class="index-headline normal"><span>Notes</span></h5>
     {% endif %}
-                                     
+    
+    {% if site.tags.notes %}
     <div class="cf frame">
       {% for post in site.tags.notes %}
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
@@ -73,6 +74,7 @@ layout: default
         </article>
       {% endfor %}
     </div>
+    {% endif %}                                                                                                                                                  
                                      
     <nav class="pagination" role="navigation">
       {% if paginator.next_page %}
