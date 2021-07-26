@@ -3,7 +3,7 @@ layout: post
 title:  "의식의 흐름 #1"
 date:   2021-07-26 22:58:00
 categories: 의식의 흐름
-tags: featured
+tags: thoughts
 image: /assets/article_images/2021-07-26-post1/wallpaper.jpg
 ---
 
