@@ -114,10 +114,10 @@ line-height: 3.5
         - $P(X=1) = p$
         - $P(X=0) = 1-p$
 - Definitions:<br>
-<span>&ensp;</span><span style="line-height: 1.0;">○ 확률변수 X: {0,1} 중에 1 이 발생할 확률 = p 인 실험을 1 번 실험 했을때, 1 이 발생하는 횟수</span><br>
-<span>&ensp;</span><span style="line-height: 1.0;">○ 사건 x: 1 이 발생하는 횟수</span>
+<span>&ensp;</span><span style="line-height: 1.0;"><p>○ 확률변수 X: {0,1} 중에 1 이 발생할 확률 = p 인 실험을 1 번 실험 했을때, 1 이 발생하는 횟수<br>
+○ 사건 x: 1 이 발생하는 횟수<br>
         - x $\in$ {0,1} (discrete)<br>
-<span>&ensp;</span><span style="line-height: 1.0;">○ 가설 p: {0,1} 중에 1 이 발생할 확률</span>
+○ 가설 p: {0,1} 중에 1 이 발생할 확률</p></span>
         - p 이기 때문에 parameter 1개
 - Example:<br>
 <span>&ensp;</span><span style="line-height: 1.0;">○ 확률변수 X: {뒷면, 앞면} 중에 앞면이 발생할 확률 = p 인 실험을 1번 실험 했을때, 앞면이 발생하는 횟수</span><br>
