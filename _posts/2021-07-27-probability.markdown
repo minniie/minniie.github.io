@@ -12,8 +12,8 @@ line-height: 3.5
 
 ## Definitions
 
-<p>▸ sample: 자연의 동일한 조건 내에서 관측한 것<br>
-&emsp;▹ sample 1 = 1, sample 2 = 0, sample 3 = 1<br>
+<p>● sample: 자연의 동일한 조건 내에서 관측한 것<br>
+&emsp;○ sample 1 = 1, sample 2 = 0, sample 3 = 1<br>
 ▸ data: sample 의 집합<br>
 &emsp;▹ data = {1,0,1}<br>
 ▸ event: sample 의 종류<br>
