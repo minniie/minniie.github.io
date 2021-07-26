@@ -12,7 +12,7 @@ comments: true
 ## Definitions
 
 sample: 자연의 동일한 조건 내에서 관측한 것
- -  sample 1 = 1, sample 2 = 0, sample 3 = 1
+ - sample 1 = 1, sample 2 = 0, sample 3 = 1
 
 data: sample 의 집합
  - data = {1,0,1}
