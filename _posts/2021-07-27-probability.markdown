@@ -9,14 +9,14 @@ image: /assets/article_images/2021-07-26/wallpaper.jpg
 
 ## Definitions
 
-- sample: 자연의 동일한 조건 내에서 관측한 것
- - sample 1 = 1, sample 2 = 0, sample 3 = 1
-- data: sample 의 집합
- - data = {1,0,1}
-- event: sample 의 종류
-    - event 1 = 1, event 2 = 0
-- event space: event 의 집합
-    - event space = {1,0}
+- sample: 자연의 동일한 조건 내에서 관측한 것<br>
+    - sample 1 = 1, sample 2 = 0, sample 3 = 1<br>
+- data: sample 의 집합<br>
+    - data = {1,0,1}<br>
+- event: sample 의 종류<br>
+    - event 1 = 1, event 2 = 0<br>
+- event space: event 의 집합<br>
+    - event space = {1,0}<br>
     - ~ state space
 - random variable(확률변수): 자연에서 일어나는 것들을 수학적으로 설명하기 위한 수단
     - variable: 확률변수는 각 사건을 값으로 가진다
