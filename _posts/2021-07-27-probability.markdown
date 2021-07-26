@@ -30,9 +30,9 @@ line-height: 3.5
 - function: 각 사건에 그 사건이 발생할 확률이 매핑되어 있다
 - P(X=x): X is random variable, x is an event
 - discrete random variable(이산확률변수): event 의 type 이 countable 한 경우<br>
-<span style="line-height: 1.1;"> - countable: finite (동전, 주사위) or countably infinite (integers)</span>
+<span style="line-height: 1.0;"> ○ countable: finite (동전, 주사위) or countably infinite (integers)</span>
 - continuous random variable(연속확률변수): event 의 type 이 uncountable 한 경우
-    - uncountable: uncountably infinite (real number)
+<span style="line-height: 1.0;"> ○ uncountable: uncountably infinite (real number)</span>
 
 #### probability mass function: for discrete X, input: x, output: P(X=x)
 - $\sum_{x \in X} P(X=x) = 1$
