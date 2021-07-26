@@ -147,7 +147,7 @@ line-height: 3.5
 <span>&ensp;</span><span style="line-height: 1.0;">○ $P(X=x_i) = p_i$</span>
 - Definitions:<br>
 <span>&ensp;</span><span style="line-height: 1.0;">○ 확률변수 X: {0,...,V} 중에 i 가 발생할 확률 = p_i 인 실험을 1 번 실험 했을때, i 가 발생하는 횟수</span><br>
-<span>&ensp;</span><span style="line-height: 1.0;">○ 사건 x_i: i 가 발생하는 횟수<</span><br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ 사건 x_i: i 가 발생하는 횟수</span><br>
 <span>&emsp;</span><span style="line-height: 1.0;">● x_i $\in$ {0,1} (discrete)</span><br>
 <span>&ensp;</span><span style="line-height: 1.0;">○ 가설 p_i: {0,...,V} 중에 i 가 발생할 확률</span><br>
 <span>&emsp;</span><span style="line-height: 1.0;">● p_1, ... , p_V 이기 때문에 parameter 은 V개</span>
@@ -156,34 +156,34 @@ line-height: 3.5
 <span>&ensp;</span><span style="line-height: 1.0;">○ x_i 가 categorical variable 이므로 mean, variance 계산하지 않는다</span>
 
 #### multinomial distribution (다항분포):
-- X has multinomial distribution iff:
+- X has multinomial distribution iff:<br>
 <span>&ensp;</span><span style="line-height: 1.0;">○ $P(X=x_i) = \frac{n!}{x_1!x_2!...x_V!} p_1^{x_1} p_2^{x_2} ... p_V^{x_V}$</span>
-- Definitions:
-<span>&ensp;</span><span style="line-height: 1.0;">○ 확률변수 X: {0,...,V} 중에 i 가 발생할 확률 = p_i 인 실험을 n 번 실험 했을때, i 가 발생하는 횟수</span>
-<span>&ensp;</span><span style="line-height: 1.0;">○ 사건 x_i: i 가 발생하는 횟수</span>
-        - x_i $\in$ {0,1,...,n} (discrete)
-<span>&ensp;</span><span style="line-height: 1.0;">○ 가설 p_i: {0,...,V} 중에 i 가 발생할 확률</span>
-        - p_1, ... , p_V 이기 때문에 parameter 은 V개
-- 특징:
+- Definitions:<br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ 확률변수 X: {0,...,V} 중에 i 가 발생할 확률 = p_i 인 실험을 n 번 실험 했을때, i 가 발생하는 횟수</span><br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ 사건 x_i: i 가 발생하는 횟수</span><br>
+<span>&emsp;</span><span style="line-height: 1.0;">● x_i $\in$ {0,1,...,n} (discrete)</span><br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ 가설 p_i: {0,...,V} 중에 i 가 발생할 확률</span><br>
+<span>&emsp;</span><span style="line-height: 1.0;">● p_1, ... , p_V 이기 때문에 parameter 은 V개</span>
+- 특징:<br>
 <span>&ensp;</span><span style="line-height: 1.0;">○ x_i 가 categorical variable 이므로 mean, variance 계산하지 않는다</span>
 
 #### gaussian/normal distribution (가우시안분포/정규분포):
-- X has gaussian distribution iff:
-    - $P(X=x) = N(\mu, \sigma^2) = \frac{1}{\sqrt{2\pi}\sigma} 
-      \exp(-\frac{(x-\mu)^2}{2\sigma^2})$
-- Definitions:
-    - 확률변수 X: 평균 = $\mu$, 표준편차 = $\sigma$ 인 실험을 1번 했을때, 발생하는 값
-    - 사건 x: 발생하는 값
-    - 가설 $\mu, \sigma$
-- 특징:
-    - standard gaussian distribution:
-        - Z has standard gaussian distribution iff:
-            - $P(Z=z) = N(0, 1^2) = \frac{1}{\sqrt{2\pi}}\text{exp}(-\frac{z^2}{2})$
-        - $X \sim N(\mu, \sigma^2)$ 를 정규화하면 $Z = \frac{X - \mu}{\frac{\sigma}{\sqrt{n}}} \sim N(0, 1^2)$
-        - $P(a < X < b) = P(\frac{a - \mu}{\frac{\sigma}{\sqrt{n}}} < Z < \frac{b - \mu}{\frac{\sigma}{\sqrt{n}}}) = \phi(Z=\frac{b - \mu}{\frac{\sigma}{\sqrt{n}}}) - \phi(Z=\frac{a - \mu}{\frac{\sigma}{\sqrt{n}}})$
-        - $\phi(Z=z)$: CDF($N(0, 1^2)$)
-    - 동일한 분산을 가진 분포들 중, 정규분포는 maximum entropy 를 가짐
-        - 가설 $\theta$ 를 정규분포로 설정하면, minimum prior knowledge 를 가짐
+- X has gaussian distribution iff:<br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ $P(X=x) = N(\mu, \sigma^2) = \frac{1}{\sqrt{2\pi}\sigma} 
+      \exp(-\frac{(x-\mu)^2}{2\sigma^2})$</span><br>
+- Definitions:<br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ 확률변수 X: 평균 = $\mu$, 표준편차 = $\sigma$ 인 실험을 1번 했을때, 발생하는 값</span><br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ 사건 x: 발생하는 값</span><br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ 가설 $\mu, \sigma$</span>
+- 특징:<br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ standard gaussian distribution:</span><br>
+<span>&emsp;</span><span style="line-height: 1.0;">● Z has standard gaussian distribution iff:</span><br>
+<span>&emsp;</span><span style="line-height: 1.0;">● $P(Z=z) = N(0, 1^2) = \frac{1}{\sqrt{2\pi}}\text{exp}(-\frac{z^2}{2})$</span><br>
+<span>&emsp;</span><span style="line-height: 1.0;">● $X \sim N(\mu, \sigma^2)$ 를 정규화하면 $Z = \frac{X - \mu}{\frac{\sigma}{\sqrt{n}}} \sim N(0, 1^2)$</span><br>
+<span>&emsp;</span><span style="line-height: 1.0;">● $P(a < X < b) = P(\frac{a - \mu}{\frac{\sigma}{\sqrt{n}}} < Z < \frac{b - \mu}{\frac{\sigma}{\sqrt{n}}}) = \phi(Z=\frac{b - \mu}{\frac{\sigma}{\sqrt{n}}}) - \phi(Z=\frac{a - \mu}{\frac{\sigma}{\sqrt{n}}})$</span><br>
+<span>&emsp;</span><span style="line-height: 1.0;">● $\phi(Z=z)$: CDF($N(0, 1^2)$)</span><br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ 동일한 분산을 가진 분포들 중, 정규분포는 maximum entropy 를 가짐</span><br>
+<span>&emsp;</span><span style="line-height: 1.0;">● 가설 $\theta$ 를 정규분포로 설정하면, minimum prior knowledge 를 가짐</span>
 
 ## Statistics
 
