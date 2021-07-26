@@ -12,23 +12,28 @@ comments: true
 ## Definitions
 
 sample: 자연의 동일한 조건 내에서 관측한 것
-    -  sample 1 = 1, sample 2 = 0, sample 3 = 1
+ -  sample 1 = 1, sample 2 = 0, sample 3 = 1
+
 data: sample 의 집합
-    - data = {1,0,1}
+ - data = {1,0,1}
+    
 event: sample 의 종류
-    - event 1 = 1, event 2 = 0
+ - event 1 = 1, event 2 = 0
+    
 event space: event 의 집합
-    - event space = {1,0}
-    - ~ state space
+ - event space = {1,0}
+ - ~ state space
+    
 random variable(확률변수): 자연에서 일어나는 것들을 수학적으로 설명하기 위한 수단
-    - variable: 확률변수는 각 사건을 값으로 가진다
-    - function: 각 사건에 그 사건이 발생할 확률이 매핑되어 있다
-    - P(X=x): X is random variable, x is an event
-    - discrete random variable(이산확률변수): event 의 type 이 countable 한 경우
+ - variable: 확률변수는 각 사건을 값으로 가진다
+ - function: 각 사건에 그 사건이 발생할 확률이 매핑되어 있다
+ - P(X=x): X is random variable, x is an event
+ - discrete random variable(이산확률변수): event 의 type 이 countable 한 경우
         - countable: finite (동전, 주사위) or countably infinite (integers)
     - continuous random variable(연속확률변수): event 의 type 이 uncountable 한 경우
         - uncountable: uncountably infinite (real number)
-- probability mass function: for discrete X, input: x, output: P(X=x)
+        
+probability mass function: for discrete X, input: x, output: P(X=x)
     > $\sum_{x \in X} P(X=x) = 1$
     - P(X=x) in (0,1)
 - probability density function: for continuous X, input: x, output: P(X=x)
