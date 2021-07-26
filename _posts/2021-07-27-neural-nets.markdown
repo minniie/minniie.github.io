@@ -3,7 +3,7 @@ layout: post
 title:  "신경망"
 date:   2021-07-27 07:14:00
 categories: 신경망
-tags: featured
+tags: notes
 image: /assets/article_images/2021-07-27-neural-nets/wallpaper.JPG
 use_math: true
 comments: true
