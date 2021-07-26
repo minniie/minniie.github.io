@@ -51,7 +51,8 @@ comments: true
 #### distribution(분포): 해당 확률변수의 모든 event와 그에 해당하는 확률값을 정의/요약
 - pmf, pdf 와 동일
 
-#### parameter: distribution 이 closed form 일 경우(?) 그 식을 결정하는 값들
+#### parameter: distribution 이 closed form 일 경우(?) 그 식을 결정하는 값들<br>
+
 
 #### expectation(기댓값):
 - if X == variable, X 의 값을 이미 알고 있음
