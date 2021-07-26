@@ -7,7 +7,6 @@ tags: featured
 image: /assets/article_images/2021-07-26/wallpaper.jpg
 ---
 
-
 ## Definitions
 
 - sample: 자연의 동일한 조건 내에서 관측한 것
