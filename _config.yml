@@ -4,9 +4,36 @@ gems:
   - jekyll-paginate
 
 # Site settings
+<<<<<<< HEAD
 title: "Mediator"
 description: > # this means to ignore newlines until "email:"
    A Jekyll theme - Medium inspired
+=======
+title: Jekyll-Uno
+description: 'Jekyll-Uno - a minimal, responsive theme for Jekyll'
+url: 'https://minniie.github.io/'
+baseurl: ''
+remote_theme: joshgerdes/jekyll-uno
+# google_analytics: 'UA-XXXXXX-X'
+# disqus_shortname: 'your-disqus-name'
+# disable_landing_page: true
+
+author:
+  name: 'Josh Gerdes'
+  email: josh@joshgerdes.com
+  twitter_username: joshgerdes
+  facebook_username: joshgerdes
+  github_username:  joshgerdes
+  linkedin_username:  joshgerdes
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
+>>>>>>> 315dd235f2d6e962eabeb63cfa89e197215cbea3
 
 email: a-mail@mail.mail
 #blog logo
