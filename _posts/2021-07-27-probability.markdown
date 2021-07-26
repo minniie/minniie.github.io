@@ -55,8 +55,8 @@ line-height: 3.5
 #### expectation(기댓값):
 - if X == variable, X 의 값을 이미 알고 있음
 - if X == random variable, X 의 값을 모르고 있음<br>
-<span style="line-height: 1.0;"> ○ 이때 대신에 X 의 기댓값을 알수있음</span><br>
-<span style="line-height: 1.0;"> ○ X 가 가지는 모든 event x * event x 가 발생할 확률</span>
+<span>&emsp;</span><span style="line-height: 1.0;"> ○ 이때 대신에 X 의 기댓값을 알수있음</span><br>
+<span>&emsp;</span><span style="line-height: 1.0;"> ○ X 가 가지는 모든 event x * event x 가 발생할 확률</span>
 - $E_{X\sim P} (X)$: random variable X 는 probability distribution P 를 따른다
 
 #### mean: 해당 확률변수의 기댓값
