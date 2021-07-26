@@ -7,6 +7,7 @@ tags: featured
 image: /assets/article_images/2021-07-26/wallpaper.jpg
 use_math: true
 comments: true
+line-height: 3.5
 ---
 
 ## Definitions
@@ -110,10 +111,10 @@ comments: true
 ##### bernoulli distribution (베르누이분포):
 - X has bernoulli distribution iff:
     - $P(X=x) = p^x * (1-p)^{1-x}$
-        - $P(X=1) = p$
-        - $P(X=0) = 1-p$
+  - $P(X=1) = p$
+  - $P(X=0) = 1-p$
 - Definitions:
-    - 확률변수 X: {0,1} 중에 1 이 발생할 확률 = p 인 실험을 1 번 실험 했을때, 1 이 발생하는 횟수
+ - 확률변수 X: {0,1} 중에 1 이 발생할 확률 = p 인 실험을 1 번 실험 했을때, 1 이 발생하는 횟수
     - 사건 x: 1 이 발생하는 횟수
         - x $\in$ {0,1} (discrete)
     - 가설 p: {0,1} 중에 1 이 발생할 확률
