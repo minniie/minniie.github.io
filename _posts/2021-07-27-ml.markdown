@@ -1,0 +1,440 @@
+---
+layout: post
+title:  "ML"
+date:   2021-07-27 22:58:00
+categories: ML
+tags: featured
+image: /assets/article_images/2021-07-26/wallpaper.jpg
+use_math: true
+comments: true
+---
+
+## Machine learning
+
+- 정의: data → feature 의 함수를 찾는 것
+    - data: X
+    - feature: Y (== pattern, label)
+    - X, Y are random variables
+        - P(Y|X) 의 조건부 확률을 찾는 것
+        - P(Y|X) 의 event space == P(Y) 의 event space
+            - 따라서 모델 loss 를 설정할때 P(Y) 와 Q(Y) 를 비교하는 것임
+        - Y $\approx$ $\theta$(X) 에서 $\theta$ 는 hypothesis
+    - 자연에 data 는 무수히 많음. 아무 관측값이 data 가 될수있음. 하지만 우리는 여기서 중요 정보만 알아내고 싶음. 이 중요 정보가 feature 임.
+    - 예를들어, 인간이 사물을 볼때 모든 픽셀값에 의미를 부여하지 않음. "이해"라는 것은 보여지는 것에서 중요 정보만 추출해서 볼수 있다는 것임. 풍경을 보고 있으면, 나무가 있고 사람이 걸어간다는 중요 정보만 추출할수 있음. 인간은 자연스럽게 이 함수를 뇌에서 구현하고 있음.
+- 종류:
+    - supervised learning:
+        - data + feature 이 주어지고, 새로운 data 에 대해 feature 을 뽑아내야 함
+        - ex. data == sentence, feature == sentiment label
+        - 종류:
+            - classification:
+                - Y is categorical variable
+                    - categorical: 수치값이 각 class 의 상징일 뿐인 경우
+                    - class 끼리 수치값을 바꾸어도 의미가 변하지 않음
+                        - ex. token id
+                - ex. logistic regression, multinomial logistic regression, SVM, decision tree
+                    - logistic regression
+                        - 가설: $\theta$ is logistic, 즉 두 확률변수 X,Y 의 관계가 logistic 하다
+                        - 가정: Y 가 하나의 레이블을 나타냄
+                            - P(Y=1) = $\theta$(X) 에서 $\theta$ 의 마지막 레이어가 sigmoid
+                            - 하나의 레이블에 맞는다, 아니다로 binary classification 의 의미
+                            - 기존 linear regression 으로 계산하면 $\theta$(X) $\in (-\infin, \infin)$
+                            - 이때 이 $\theta$(X) 를 logit 으로 해석함
+                            - odds: event 가 발생할 확률 / event 가 발생하지 않을 확률
+                                - P(Y=1) / (1-P(Y=1))
+                                - odds $\in (0, \infin)$
+                            - logit: odds 에 log 를 취한 것
+                                - log(P(Y=1) / (1-P(Y=1))) = $\theta$(X)
+                                - logit $\in (-\infin, \infin)$
+                            - 식을 풀면 P(Y=1) = 1 / (1 + exp(-$\theta$(X))
+                            - P(Y=1) $\in (0, 1)$
+                        - decision boundary for binary classification:
+                            - P(Y=1) > P(Y≠1)
+                            - $\theta$(X) > 0
+                            - predicted label = 1 if $\theta$(X) > 0 else 0
+                            - linear decision boundary = $\theta$(X) = 0
+                        - parameter $\theta$
+                        - loss: Logistic loss(Y, $\theta$(X))
+                            - dLogistic/d$\theta$ 를 구하려면 gradient descent 를 사용해야함
+                        - multi-class:
+                            - P(Y=1) = exp($\theta$1(X)) / (1 + exp($\theta$1(X)) + exp($\theta$2(X)))
+                            - P(Y=2) = exp($\theta$2(X)) / (1 + exp($\theta$1(X)) + exp($\theta$2(X)))
+                            - P(Y=3) = 1 / (1 + exp($\theta$1(X)) + exp($\theta$2(X)))
+                            - softmax 와 연관
+                    - multinomial logistic regression
+                        - 가정: Y 가 n개의 레이블을 나타냄
+                            - P(Y=1), P(Y=2), ... P(Y=n) = $\theta$(X) 에서 $\theta$의 마지막 레이어가 softmax
+                            - n개의 레이블 중에 하나에 맞는다는 의미
+                        - decision boundary:
+                            - predicted label = $\argmax_{y} P(Y=y)$
+                        - parameter $\theta$
+                        - loss: CE(Y, $\theta$(X))
+                            - dCE/d$\theta$ 를 구하려면 gradient descent 를 사용해야함
+                            - MLE로 $\theta$ 를 찾고자 할때, likelihood(X,Y) = P(Y|$\theta$(X)) = Bernoulli($\theta$(X)) 를 전개하면, maximizing likelihood == minimizing CE 가 나옴
+                    - SVM:
+                        - 의미:
+                            - binary classification 을 위한 hyperplane (decision boundary) 를 찾는 것
+                            - 이 hyperplane 은 n-1 dimension 으로 n-dimensional space 에 있는데, where n is number of features.
+                            - maximize margin between support vectors vs maximize likelihood (logistic regression)
+                        - Definitions:
+                            - kernel trick: 원래 hyperplane 은 선형하게만 분류할수있는데, 이거를 비선형하게 분류하기 위해서 데이터에 kernel을 씌워서 다른 higher dimension 으로 만드는것.
+                                - 이런 커널에는 linear/polynomial/RBF 이 있다.
+                                - 즉, input space -> feature space (같은 정보를 지니고있지만 분류가 쉬운 형태)
+                            - Support vectors: 데이터포인트 중에 hyperplane 과 가장 가까이있어서 결국 이 hyperplane 의 파라미터를 adjust 해가는데 영향을 주는 애들. margin 을 maximize 하는 방향으로 학습 = 각 셋에서 가장 hyperplane 과 가까운 애들이 서로 멀게하는것. hyperplane 이 다시 계산되면 sv 들도 다시계산됨.
+                        - 장점: 분포에 대한 가정이 없어서 모든 데이터에 사용가능.
+                        - 단점: 커널 사용하면 계산량 커짐. 커널 선택하는거도 어려움.
+                    - decision tree:
+                        - 의미:
+                            - x1, ..., xd 개의 variables 중에, 한번에 하나씩의 predictor variable 을 사용해서, 그 아래로 내려갈때마다 또 다른 predictor variable 을 사용하여, 규칙들을 만들어내는것.
+                            - sum of data points in each terminal node = data points in root node
+                            - 결국 새로운 data point 가 주어졌을때 확률을 따라서 root node 에서 terminal node까지 왔을때,
+                                - classification 의 경우 그 terminal node의 probability
+                                - regression 일 경우 그 terminal node의 mean
+                                - 논문에서는 classification 이기 때문에 최종 터미널노드가 2개
+                        - 학습 방향: homogenity 증가, impurity 감소(엔트로피)
+                        - 장점: 각 변수 단위로 설명 가능.
+                        - 단점: 특정 데이터에만 잘 작동. 어느정도의 hierarchy among variables?
+                        - 알고리즘:
+                            - 1) recursive partitioning:
+                                - for i in d: 각 변수에 대하여, 이 변수를 기준으로 reorder n datapoints. then, for p in n: p번째 애 다음으로 나누어 분류했을때 각 두가지 그룹에 대하여 엔트로피 계산하고 합함.
+                                - 이런 partitioning 을 총 n-1 번 하게됨(inner forloop runs n-1 times). 그다음에 d개중에 다른 변수(next i; outer forloop runs d times). 그 모든거중에 가장 엔트로피가 작았던 d(variable) 와 p(partitioning point) 가 first level. for each level in the tree, 총 d(n-1)번의 엔트로피 계산 필요.
+                            - 2) pruning:
+                                - 모든 터미널노드가 순도 100(엔트로피 0)이면 오버피팅의 우려가 있기때문에 결합시켜줘야함 (가지를 자르는게 결국 merge 하는거임).
+            - regression:
+                - Y is numerical variable
+                    - numerical: 수치값 자체가 의미를 갖는 경우 (discrete/continuous)
+                    - 근데 discrete 하면 미분을 못하므로 사실상 continuous
+                        - if differentiable then continuous (O)
+                        - if continuous then differentiable (X)
+                - ex. linear regression
+                    - linear regression
+                        - 가설: $\theta$ is linear, 즉 두 확률변수 X,Y 의 관계가 linear 하다
+                            - Y = $\theta$(X) 에서 $\theta$ 가 linear function
+                            - $\theta$가 여러 레이어로 이루어져 있어도 결국 하나의 linear function 으로 나타낼수 있음
+                            - $\theta$(X) = $\theta$1x1 + ... + $\theta$nxn + $\epsilon$  = $\theta^{T}X$
+                        - parameter $\theta$: linear function 의 coefficients
+                            - [$\theta$1, ..., $\theta$n] 의 n-dim vector 로 표현 가능
+                        - hyperparameter: $\theta$ 의 개수
+                            - 몇개의 feature (n) 로 설명할건지
+                        - loss: MSE(Y, $\theta$(X))
+                            - dMSE/d$\theta$ = 0 을 풀어서 $\theta$를 바로 찾을수 있음
+                            - gradient descent 같은 approximation 필요없음
+                            - MLE로 $\theta$ 를 찾고자 할때, likelihood(X,Y) = P(Y|$\theta$(X)) = N($\theta$(X), $\sigma^2$) 를 전개하면, maximizing likelihood == minimizing MSE 가 나옴
+    - unsupervised learning:
+        - data 만 주어지고, 새로운 data 에 대해 feature 을 뽑아내야 함
+        - 종류:
+            - clustering:
+                - ex. k-means, dbscan
+                    - k-means
+                        - 의미:
+                            - center 기반 클러스터링 알고리즘
+                            - 같은 클러스터의 데이터는 어떤 센터를 중심으로 분포할거라는 가정
+                            - 센터와 각 점 사이의 거리. O(n) = 각 점과 센터만을 n 번 비교하면됨.
+                            - K (클러스터 개수) 정해줘야함.
+                        - Examples:
+                            - 각 window 안에 있는 genome sequence
+                            - in cv, instead of plotting each feature separately, we find k points that can represent each feature. we can have 1000 prototype vectors, each of 128 dimension.
+                        - 장점: decision tree 같은 애들보다 빠름 (다들 평등해서)
+                        - 단점: 처음에 랜덤하게 센터를 잡기때문에 결과가 다르게 나온다. outlier 에 민감하다.
+                        - parameter: center
+                        - hyperparameter: k
+                        - 알고리즘: 파라미터: minimize the sum of Euclidean distance between point xi and nearst cluster center mi
+                            - 1)randomly initialize k centers
+                            - 2)for i in n: go through each row in dist, and assign i to k with closest distance. 이 과정은 O(n). (if assignment doesn’t change, end of algorithm, k clusters created)
+                            - 3)for c in k: recompute center by finding the point with minimum sum of euclidean distances. this becomes the new center. 이 과정도 O(n)
+                            - 4)then, with reference to these new centers, for i in n: assign to the new k.
+                    - dbscan
+                        - 의미:
+                            - density 기반 클러스터링 알고리즘
+                            - 같은 클러스터는 각 데이타포인트 사이의 밀도가 높을것이라는 가정
+                            - 센터로부터의 거리가아니라 점 사이의 거리
+                            - O(n^2) = 각 점에 대하여 다른점들이랑 비교해야하니까.
+                        - 장점: 클러스터의 개수를 알아서 찾아줌. outlier 를 버림. 항상 같은 결과.
+                        - 단점: 데이터 밀도가 클러스터마다 다른 거에는 적합하지않다.
+                        - 알고리즘:
+                            - 특정 점 i 에 대해서, 엡실론 안에있는 거리에 점이 몇개있는지 센다.
+                            - if count < min: pass.
+                            - else:
+                                - if one of them is part of a cluster: add other points to that cluster.
+                                - else: create a cluster; add those points.
+                            - go through the row and find the smallest distance point. this becomes the new i. (if count == 0, add as outlier)
+            - dimension reduction:
+                - ex. PCA, SVD, LDA
+            - association:
+                - ex. Apriori
+                    - Apriori
+                        - 의미:
+                            - 어떠한 연관규칙(if A then B) 을 만들어내는거임. 일단 집합을 원소 1개부터 시작해서 확률을 구하고, 그 다음에 하나씩 더 넣으면서 P(i,j,…) 확률을 구함. 당연히 점점 작아짐.
+                            - 근데 데이터의 아이템이 n개면 여기서 모든 경우의수를 보려면 n(n-1)(n-2)…? 그래서 frequent item sets 만 고려하는게 a priori. P(A) = 0.1 이면 P(A,B)는 그거보다 작을거임. 그래서 같이나오는 규칙이 사실상 의미가 없기때문에 그런애들은 미리 pruning 해주는거임.
+                        - Examples:
+                            - X 아이템 구매하는 고객들은 Y 아이템 역시 구매할 가능성이 높다
+                            - genome window 에 L 이 들어있으면 G 도 같이 들어있을 확률이 높다
+                        - Notations:
+                            - support (지지도): P(A), 전체 중 어떤 패턴의 확률. 대칭적.
+                            - confidence (신뢰도): P(A,B) | P(A), 조건부 확률. A가 일어났을때 B가 일어날 확률 (P(B|A)). 비대칭적.
+                            - lift (향상도): P(A,B) | P(A) * P(B), 생성된 규칙이 실제로 얼마나 의미가 있는지. 각각이 완전히 독립적일 때를 비교해 같이 일어날 때의 비율. 그래야 그 두개가 같이있는게 의미가 있다는 거임. 값이 1이면 규칙에 의미가 없다는거임.
+                        - 알고리즘:
+                            - 1) given n items, create n*n matrix. for each entry, P(i,j) included together, out of all N samples. if P(i,j) < min threshold, prune that tree.
+                            - 2) new matrix with row as P(i,j) and new column as P(k) (one more item). again, if P(i,j) < min threshold, prune that tree.
+                            - 3) calculate s/c/l along the way (?)
+- data:
+    - data vectorization: any data == tensor of floats
+        - image 의 경우 data 가 continuous pixel values 로 이미 주어짐
+        - text 의 경우 data 가 discrete 한 단어들 이므로 이를 continuous 하게 만들어 주는 추가 과정 필요. 이게 embedding. continuous 해야 미분이 가능해서 모델을 학습시킬수 있음
+    - data normalization: any float in data $\in$ (0,1)
+- function:
+    - optimization: finding best $\theta$ s.t. Y $\approx$ $\theta$(X) for (X,Y) in training set
+    - generalization: finding best $\theta$ s.t. Y $\approx \theta$(X) for (X,Y) in test set
+    - 모델을 학습한다 == 함수 Y $\approx$ f(X) 를 찾는다 == (X,Y) 를 가장 잘 설명하는 가설 $\theta$ 를 찾는다  == Loss(Y, $\theta$(X)) 를 최소화한다 == 레이블에 대한 정답 분포와 예측 분포의 차이를 최소화한다
+    - 모델 사이즈 == 모델 capacity
+    - Y $\approx$ $\theta$(X) 의 뜻은, 우리가 모르는 Y 는 $\theta$(X) 를 평균으로 하는 어떤 distribution 을 따를 것이라는 뜻
+        - regression: Y ~ $N(\theta(X), \sigma^2)$
+            - likelihood(D) = likelihood(X,Y) = P(Y|$\theta$(X)) = N($\theta$(X), $\sigma^2$)
+        - classification: Y ~ Bernoulli$(\theta(X))$
+            - likelihood(D) = likelihood(X,Y) = P(Y|$\theta$(X)) = Bernoulli($\theta$(X))
+
+## Model
+
+- layer 이 많을수록, data 의 representation 을 더 high level 로 표현
+
+## Training & Validation & Testing
+
+- training:
+- validation:
+    - hold-out validation:
+    - cross validation:
+- testing:
+
+## Overfitting & Underfitting
+
+- overfitting:
+    - train loss decreasing, val loss increasing
+    - better optimization means worse generalization
+    - f 가 train set 에만 국한된 data → feature 를 뽑아낸다는 뜻
+- underfitting:
+    - train loss decreasing, val loss decreasing
+    - better optimization means better generalization
+    - f 가 train set 의 data → feature 을 못 뽑아낸다는 뜻
+- Ways to prevent overfitting:
+    - 1) increase train set
+    - 2) early stop: stop training when val loss starts increasing
+    - 3) regularization:
+        - 데이터에 피팅되는 함수는 $\theta$ 의 절댓값이 주로 크다
+            - polynomial 에서 coefficient 의 절댓값이 클수록 기울기가 급해지며 데이터에 피팅하는 것과 비슷
+        - 따라서 $\theta$ 의 절댓값을 줄인다
+        - Occam's razor: 같은 현상을 설명하기 위해 간단한 설명이 가장 좋다
+        - backward pass 에서의 normalization
+        - L1 regularization: ||$\theta$|| < certain threshold
+            - Loss ← loss + $\frac{\lambda}{m} \sum_{i=1}^{m} ||\theta||$   (m: number of features)
+            - can make certain ||$\theta$|| = 0
+        - L2 regularization: ||$\theta$||^2 < certain threshold
+            - Loss ← loss + $\frac{\lambda}{2m} \sum_{i=1}^{m} ||\theta||^2$
+            - can't make ||$\theta$|| = 0
+        - MAP: P($\theta$) 에서 $\theta$ 가 0 주변에 분포한다는 사전지식 주입
+            - $\theta \sim N(0, \sigma^2)$ → L2 regularization
+            - $\theta \sim \text{Laplacian}(0, \sigma^2)$ → L1 regularization
+    - 4) dropout
+        - 일부 레이어를 0 으로 함 ?
+        - dropout ratio = 0 이 될 특성의 비율 $\in$ (0.2, 0.5)
+    - 5) weight decay
+        - $\theta$ ← $\theta$ * 0.999
+        - 학습이 진행될수록 $\theta$ 의 절댓값이 올라가는 경향이 있음
+        - 이를 막기 위해 절댓값을 낮춘다
+    - 6) decrease batch size
+        - smaller batch size means more noise, therefore less fitting
+        - 다만 pretraining 의 경우 batch size 를 무조건 크게 해도됨
+            - 데이터가 무한하기 때문 ?
+            - 지금 Hyperclova 는 batch size == 1024
+    - 7) batch normalization
+        - 각 레이어의 입력이 mean = 0, std = 1 이 되도록 normalize
+        - forward pass 에서의 normalization
+    - 8) reduce model size
+        - no free lunch: 모델이 커질수록 capacity 도 올라가지만 overfitting 가능성도 올라감
+
+## Loss functions
+
+- Notations:
+    - P(X)
+        - X: random variable
+            - 레이블
+        - P(X): distribution of random variable
+            - 레이블 분포
+            - ex. LM 의 경우 x $\in$ [0, vocab_size]
+    - P(X): 정답 분포
+    - Q(X): 예측 분포 == 모델 분포
+- 의미: 정답 분포와 예측 분포의 차이를 real number 로 나타내는 수단
+    - 가설 $\theta$ 를 검증하고 수정하는 것
+- Cross entropy
+    - 의미: P 분포 자체의 entropy + P 분포와 Q 분포의 차이
+    - H(P,Q) = $E_{X\sim P}(-\log Q(X)) = -\sum_{i=1}^{n}P(x_i) \log Q(x_i)$
+    - H(P,Q) = H(P) + D(P||Q)
+        - if P == one hot, CE == KL
+        - b.c. H(one hot distribution) ==  0 (정보량이 없음)
+        - H(P,Q) = $-\log Q(x_t)$ where t is true label
+            - 정답 레이블과의 차이 최소화
+    - dL/dx_t = -1 / (ln(2) * x_t) $\approx$ -1 / x_t
+- KL divergence
+    - 의미: P 분포와 Q 분포의 차이
+    - D(P||Q) = $E_{X\sim P}(\log \frac{P(X)}{Q(X)}) = \sum_{i=1}^{n}P(x_i) \log \frac{P(x_i)}{Q(x_i)}$
+        - LR(x) = P(x)/Q(x) (likelihood ratio: event x 가 Q 보다 P 에서 나왔을 확률)
+        - LR(X) = $\prod_{x=1}^{n} P(x_i) / Q(x_i) \approx  \sum_{x=1}^{n} \log \frac{P(x_i)}{Q(x_i)}$
+        - $\begin{aligned} D(P||Q) &= \sum_{x=1}^{n} P(x_i)\log \frac{P(x_i)}{Q(x_i)}  \\ & =  \sum_{x=1}^{n} P(x_i)\log P(x_i) - \sum_{x=1}^{n} P(x_i)\log Q(x_i) \\ \end{aligned}$
+    - prior distribution Q(X) 에서 posterior distribution P(X) 로 이동할때 얻어지는 정보량
+    - posterior distribution P(X) 를 prior distribution Q(X) 로 근사할때 손실되는 정보량
+    - D(P||Q) ≠ D(Q||P)
+        - 따라서 metric 으로 사용할순 없음
+- MSE (mean squared error)
+    - 의미: 모델의 예측이 분포가 아닌 하나의 값인경우, 각 정답값과 예측값의 차이
+    - MSE(f(X), Y) = $\frac{1}{n} \sum_{i=1}^{n} (f(x_i) - y_i  )^2$
+        - n: sample 수
+- Logistic Loss
+    - 의미: 모델의 예측이 (0,1) 사이의 하나의 값일경우, 각 정답값과 예측값의 차이
+    - $\begin{aligned}\text{Logistic loss}(f(X), Y) &= -(y \log f(x) + (1-y) \log (1-f(x))) \\& =\begin{cases}
+        -log(f(x)) & \text{if $y=1$}\\
+        -log(1-f(x)) & \text{if $y=0$}
+      \end{cases}\end{aligned}$
+        - ex. 실제 y = 0 이고 f(x) = 0 으로 예측하는 경우 loss = -log(1) = 0
+        - Y in CE: one-hot vector
+        - Y in logistic loss: {0,1}
+        - binary classification 의 경우 CE == logistic loss
+- c.f.) Entropy
+    - Information:
+        - event x 의 정보량
+        - I(x) = -log(P(x))
+        - x 가 발생할 확률이 낮을수록 정보량이 크다
+    - Entropy:
+        - random variable X 의 정보량의 기댓값
+        - H(X) = $E_{X\sim P}(-\log P(X)) = \sum_{i=1}^{n}P(x_i)\log P(x_i)$
+            - x_i: each event of random variable X
+            - log: log base 2
+        - X 의 전체 정보를 전달하기 위해 필요한 bit 의 수
+        - X 가 deterministic 이면 entropy 가장 낮음
+        - X 가 uniform 이면 entropy 가장 높음
+    - ex. X: 동전을 1번 던졌을때
+        - P(x_1) == 0.9, P(x_2) == 0.1
+            - H(X) = -(0.9 * log(0.9) + 0.1 * log(0.1)) = -(-0.14 + -0.33) = 0.47
+        - P(x_1) == 0.5, P(x_2) == 0.5
+            - H(X) = -(0.5 * log(0.5) + 0.5 * log(0.5)) = -(-0.5 + -0.5) = 1
+
+## Gradient Descent
+
+- 가장 좋은 $\theta$ 를 approximate 하는 방법
+- 현재 $\theta$ 에서 L 이 minimize 되도록 어떻게 $\theta$ 를 바꿔야 하는지
+    - L 이 계산하기 쉬운 형태이면, dL/d$\theta$ = 0 만드는 $\theta$ 를 찾으면 됨 (gradient descent 필요 X)
+    - L 이 계산하기 어려운 형태이면, 현재의 dL/d$\theta$ (gradient) 의 반대방향으로 $\theta$ 를 수정하면 됨
+        - $\theta$ ← $\theta$ - lr * dL/d$\theta$
+- GD: 전체 데이터 (X,Y) 를 가지고, 가장 좋은 $\theta$ 를 approximate 하기
+    - 장점:
+        - gradient 를 정확히 구할수있다
+    - 단점:
+        - 데이터를 한꺼번에 봐야 하므로 계산량이 크다
+        - noise 가 없어 overfitting 이 생길수 있다
+- SGD or mini-batch SGD: 1 or batch_size 의 일부 데이터 (X,Y) 를 가지고, 가장 좋은 $\theta$ 를 approximate 하기
+    - 장점:
+        - gradient 에 noise 가 존재하기 때문에 오히려 overfitting 을 막을수 있음
+    - 단점:
+        - 각 gradient 는 noisy 할수있다
+        - 따라서 good optimizer, scheduler 같은 세심한 학습 컨트롤 필요
+        - local optima 에 빠질수 있다
+- c.f. second order derivative 를 구하면 local optima 에서 벗어나 더 좋은 $\theta$ 를 찾을수 있지만, 계산이 너무 복잡함
+
+## Backprop
+
+- gradient descent 를 하려면 dL/d$\theta$ 를 모든 $\theta$ 에 대해 구해야하는데, L 은 마지막 레이어의 $\hat y = \theta(x)$ 에 대한 함수이므로, 그 아래 레이어들에 대해 dL/d$\theta$ 를 구하는 방법
+    - dL/d$\theta$_i = dL/d$\hat y$ * d$\hat y$/d$\theta$_n .... d$\theta$_(i+1)/d$\theta$_i
+    - $\theta$ 가 linear 인 경우, gradient descent 도 필요없고 이에따라 backprop 도 필요없음
+- vanishing gradient
+    - 의미: d$\theta$_(i+1)/d$\theta$_i < 1 이 계속 쌓여서 각 레이어의 gradient 가 0 에 가까워지는 경우
+        - $\theta$ 가 업데이트가 안됨
+    - 상황:
+        - 레이어가 많은 경우
+        - sigmoid 를 activation function 으로 사용하는 경우
+            - if y = sigmoid, dy/dx $\in (0,1)$
+            - 학습이 진행될수록, gradient 를 줄이기 위해서 (?) dy/dx 이 0에 가까워짐
+    - 해결방법:
+        - 1) sigmoid 대신 ReLU 를 사용
+            - if y = ReLU, dy/dx $\in \{0,1\}$
+            - if x > 0, 직전 gradient 를 그대로 흘려보내는 것과 같음 (gradient on/off)
+        - 2) 레이어들 사이에 residual (skip connection)
+            - skip 된 레이어의 d$\theta$_(i+1)/d$\theta$_i 가 식에서 사라짐
+            - transformer 구조에 있음
+            - model capacity 도 줄이는 역할
+        - 3) LSTM 의 gating network
+            - vanilla RNN: linear + sigmoid 의 간단한 architecture
+                - input sequence 의 길이가 길어지는경우 vanishing gradient 가 가장 큰 문제엿음
+            - LSTM: gate network 사용
+                - c*h + (1-c)*x
+                - if c=0, 현재까지의 context 를 버리고 현재 토큰 x 만 보겠다는 뜻
+- exploding gradient
+    - 의미: d$\theta$_(i+1)/d$\theta$_i > 1 이 계속 쌓여서 각 레이어의 gradient 가 $\infin$ 에 가까워지는 경우
+        - $\theta$ 가 너무 커져서 overfitting 이 되거나 loss 가 튀게 됨
+    - 상황:
+        - dy/dx > 1 인 activation function 을 사용하는 경우
+        - 잘 안발생함
+
+## Optimizer
+
+- 의미:
+    - $\theta$ ← $\theta$ - lr * dL/d$\theta$ 에서 dL/d$\theta$ 가 이미 구해졌다고 할때 실제로 어떻게 $\theta$ 를 업데이트 할것인지
+- 종류:
+    - SGD
+    - SGD w/ momentum
+        - moving average of gradients 를 구해서 반영
+        - SGD 의 noise 를 줄임
+    - Adam
+        - moving average of gradients, with earlier gradients with decay factor (0.99)
+    - Adadelta
+
+## Non-linear functions
+
+- 의미: $\theta$ 가 연속의 linear 이면 결국 하나의 linear 과 같으므로, $\theta$ 를 여러 레이어 쌓는 효과를 주기 위함 (more complex representation of X)
+- ReLU:
+    - 의미: gradient on / off
+    - y = x if x ≥ 0 else 0
+    - dy/dx = 1 if x ≥ 0 else 0
+    - dL/dx = dL/dy * 1 if x ≥ 0 else 0
+- sigmoid:
+    - ~ logistic function
+    - 의미: x 가 주어졌을때 이 값을 (0,1) 로 변환
+        - binary classification 의 의미
+        - probability density function 임 (≠ softmax 는 PDF 가 아님)
+        - normalization 은 아님 (≠ softmax 는 normalization 임)
+    - y = $\frac{1}{1+exp(-x)}$
+        - sigmoid(x1, x2) ≠ softmax(x1, x2)
+        - ex. 1 / (1+exp(-x)) = 0.62
+    - dy/dx = y(1-y)
+    - dL/dx = dL/dy * y(1-y)
+- hyperbolic tangent:
+    - y = $\frac{exp(x) - exp(-x)}{exp(x) + exp(-x)}$
+    - dy/dx = 1 - y^2
+    - dL/dx = dL/dy *  1 - y^2
+- softmax:
+    - 의미:
+        - 1) x1, ..., xn 이 주어졌을때 이 값들의 합이 1이 되도록 exponentially normalize (그럼 각 값은 각 레이블에 대한 확률의 의미를 가질수 있음)
+            - normalization: x1, ..., xn = normalize(x1, ..., xn) s.t. $\sum xi = 1$
+        - 2) classification 에서는 x1, ..., xn 이 결국 하나의 레이블에 대한 signal 을 담고 있는데, exp 를 취하면서 signal 을 더 명확히 하기 위해 (?)
+            - x1, x2 == [1,2] 의 정답 signal < x1, x2 == [10,20] 의 정답 signal
+    - 특징:
+        - softmax(x1, ..., xn) == softmax(x1+c, ..., xn+c) (c를 exponent 에 더하는 것이므로 결국 e^c 를 분모와 분자에 곱하는 것과 같다)
+        - softmax(x1, ..., xn) ≠ softmax(cx1, ..., cxn) (기존 x1, ..., xn 의 distribution 을 더 sharp 하게 해준다)
+        - 나머지 non-linear function 은 인풋이 x 로 1개지만, softmax 는 인풋이 x1, ... , xn 로 n 개이다
+    - y_k = $\frac{exp(x_k)}{\sum_{i=1}^{n} exp(x_i)}$
+        - dy_k/dx_(i=k) = y_k(1-y_k)
+        - dy_k/dx_(i≠k) = -y_i*y_k (jacobian matrix)
+    - L = -$\sum_k t_k \log y_k$
+        - dL/dy_k = -t_k/y_k
+    - dL/dx_k = y_k - t_k
+        - if t_k == 1, dL/dx_k = y_k - 1
+        - if t_k == 0, dL/dx_k = y_k
+
+## Precision & Recall & F1
+
+- precision:
+    - true positive / (true positive + false positive)
+    - true 로 분류된 애들 중에 얼마나 실제로 true 인지
+    - overlapping words / generated words
+- recall:
+    - true positive / (true positive + false negative)
+    - 실제로 true 인 애들 중에 얼마나 true 로 분류되었는지
+    - overlapping words / ground truth words
+- F1:
+    - precision 과 recall 의 harmonic mean
