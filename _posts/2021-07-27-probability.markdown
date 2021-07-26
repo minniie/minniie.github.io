@@ -63,7 +63,7 @@ comments: true
 - Definitions
     - A, B: random variables
     - a, b: events
-- Joint probability: P(A,B) = P(A$\cap$B) = P(A|B) * P(B) = P(B|A) * P(A)
+- Joint probability: P(A,B) = P(A $\cap$ B) = P(A|B) * P(B) = P(B|A) * P(A)
     - B 가 발생하고 A 가 발생할 확률
     - A 가 발생하고 B 가 발생할 확률
     - event space = {A,B} (cartesian of two random variables)
