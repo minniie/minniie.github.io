@@ -7,7 +7,6 @@ tags: featured
 image: /assets/article_images/2021-07-26/wallpaper.jpg
 use_math: true
 comments: true
-line-height: 3.5
 ---
 
 ## Definitions
