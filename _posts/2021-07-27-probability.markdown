@@ -28,7 +28,7 @@ line-height: 3.5
 #### random variable(확률변수): 자연에서 일어나는 것들을 수학적으로 설명하기 위한 수단
 - variable: 확률변수는 각 사건을 값으로 가진다
 - function: 각 사건에 그 사건이 발생할 확률이 매핑되어 있다
-- P(X=x): X is random variable, x is an event
+- <p>&emsp; P(X=x): X is random variable, x is an event</p>
 - discrete random variable(이산확률변수): event 의 type 이 countable 한 경우
 - countable: finite (동전, 주사위) or countably infinite (integers)
 - continuous random variable(연속확률변수): event 의 type 이 uncountable 한 경우
@@ -66,7 +66,9 @@ line-height: 3.5
 - $Var(X) = \sum_{x \in X}{(x-E(X))^2} * P(X=x)$
 
 #### bias: 해당 확률변수의 sample mean 과 real/latent mean 이 얼마나 차이나는지 (?)
+<br>
 #### probabilistic == stochastic == uncertain
+<br>
 #### frequentist probability: p = 특정 사건의 빈도 / 모든 사건들의 빈도
 - 이미 발생한 과거의 사건들을 설명
 
