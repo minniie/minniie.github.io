@@ -109,15 +109,15 @@ line-height: 3.5
 
 #### discrete random variables: bernoulli, binomial, categorical, multinomial
 <p>bernoulli distribution (베르누이분포):<br>
-- X has bernoulli distribution iff:<br>
-    - $P(X=x) = p^x * (1-p)^{1-x}$<br>
-  - $P(X=1) = p$<br>
-  - $P(X=0) = 1-p$<br>
-- Definitions:<br>
- - 확률변수 X: {0,1} 중에 1 이 발생할 확률 = p 인 실험을 1 번 실험 했을때, 1 이 발생하는 횟수<br>
-    - 사건 x: 1 이 발생하는 횟수<br>
+&emsp;X has bernoulli distribution iff:<br>
+&emsp;&emsp;$P(X=x) = p^x * (1-p)^{1-x}$<br>
+&emsp;&emsp;$P(X=1) = p$<br>
+&emsp;&emsp;- $P(X=0) = 1-p$<br>
+&emsp;Definitions:<br>
+&emsp;&emsp;확률변수 X: {0,1} 중에 1 이 발생할 확률 = p 인 실험을 1 번 실험 했을때, 1 이 발생하는 횟수<br>
+&emsp;&emsp;&emsp;사건 x: 1 이 발생하는 횟수<br>
         - x $\in$ {0,1} (discrete)<br>
-    - 가설 p: {0,1} 중에 1 이 발생할 확률<br>
+&emsp;&emsp;&emsp;가설 p: {0,1} 중에 1 이 발생할 확률<br>
         - p 이기 때문에 parameter 1개<br>
 - Example:
     - 확률변수 X: {뒷면, 앞면} 중에 앞면이 발생할 확률 = p 인 실험을 1번 실험 했을때, 앞면이 발생하는 횟수
