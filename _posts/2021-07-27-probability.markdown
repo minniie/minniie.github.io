@@ -108,79 +108,79 @@ comments: true
 
 #### discrete random variables: bernoulli, binomial, categorical, multinomial
 ##### bernoulli distribution (베르누이분포):
-    - X has bernoulli distribution iff:
-        - $P(X=x) = p^x * (1-p)^{1-x}$
-            - $P(X=1) = p$
-            - $P(X=0) = 1-p$
-    - Definitions:
-        - 확률변수 X: {0,1} 중에 1 이 발생할 확률 = p 인 실험을 1 번 실험 했을때, 1 이 발생하는 횟수
-        - 사건 x: 1 이 발생하는 횟수
-            - x $\in$ {0,1} (discrete)
-        - 가설 p: {0,1} 중에 1 이 발생할 확률
-            - p 이기 때문에 parameter 1개
-    - Example:
-        - 확률변수 X: {뒷면, 앞면} 중에 앞면이 발생할 확률 = p 인 실험을 1번 실험 했을때, 앞면이 발생하는 횟수
-        - 사건 x: 앞면이 발생하는 횟수
-        - 가설 p: {뒷면, 앞면} 중에 앞면이 발생할 확률
-    - 특징:
-        - mean = E(X) = p
-        - variance  = Var(X) = p(1-p)
-        - special case of binomial distribution when n=1
+- X has bernoulli distribution iff:
+    - $P(X=x) = p^x * (1-p)^{1-x}$
+        - $P(X=1) = p$
+        - $P(X=0) = 1-p$
+- Definitions:
+    - 확률변수 X: {0,1} 중에 1 이 발생할 확률 = p 인 실험을 1 번 실험 했을때, 1 이 발생하는 횟수
+    - 사건 x: 1 이 발생하는 횟수
+        - x $\in$ {0,1} (discrete)
+    - 가설 p: {0,1} 중에 1 이 발생할 확률
+        - p 이기 때문에 parameter 1개
+- Example:
+    - 확률변수 X: {뒷면, 앞면} 중에 앞면이 발생할 확률 = p 인 실험을 1번 실험 했을때, 앞면이 발생하는 횟수
+    - 사건 x: 앞면이 발생하는 횟수
+    - 가설 p: {뒷면, 앞면} 중에 앞면이 발생할 확률
+- 특징:
+    - mean = E(X) = p
+    - variance  = Var(X) = p(1-p)
+    - special case of binomial distribution when n=1
 ##### binomial distribution (이항분포):
-    - X has binomial distribution iff:
-        - $P(X=x) = \binom{n}{x} p^x (1-p)^{n-x}$
-    - Definitions:
-        - 확률변수 X: {0,1} 중에 1 이 발생할 확률 = p 인 실험을 n 번 실험 했을때, 1 이 발생하는 횟수
-        - 사건 x: 1 이 발생하는 횟수
-            - x $\in$ {0,1,...,n} (discrete)
-        - 가설 p: {0,1} 중에 1 이 발생할 확률
-            - p 이기 때문에 parameter 1개
-    - 특징:
-        - mean = E(X) = np
-        - variance = Var(X) = np(1-p)
+- X has binomial distribution iff:
+    - $P(X=x) = \binom{n}{x} p^x (1-p)^{n-x}$
+- Definitions:
+    - 확률변수 X: {0,1} 중에 1 이 발생할 확률 = p 인 실험을 n 번 실험 했을때, 1 이 발생하는 횟수
+    - 사건 x: 1 이 발생하는 횟수
+        - x $\in$ {0,1,...,n} (discrete)
+    - 가설 p: {0,1} 중에 1 이 발생할 확률
+        - p 이기 때문에 parameter 1개
+- 특징:
+    - mean = E(X) = np
+    - variance = Var(X) = np(1-p)
 ##### categorial distribution (카테고리분포):
-    - X has categorical distribution iff:
-        - $P(X=x_i) = p_1^{x_1} p_2^{x_2} ... p_k^{x_V}$
-            - $P(X=x_i) = p_i$
-    - Definitions:
-        - 확률변수 X: {0,...,V} 중에 i 가 발생할 확률 = p_i 인 실험을 1 번 실험 했을때, i 가 발생하는 횟수
-        - 사건 x_i: i 가 발생하는 횟수
-            - x_i $\in$ {0,1} (discrete)
-        - 가설 p_i: {0,...,V} 중에 i 가 발생할 확률
-            - p_1, ... , p_V 이기 때문에 parameter 은 V개
-        - 특징:
-            - NN 마지막 레이어의 softmax 값 [y1, ..., yV] == [p1, ..., pV]
-            - x_i 가 categorical variable 이므로 mean, variance 계산하지 않는다
-##### multinomial distribution (다항분포):
-    - X has multinomial distribution iff:
-        - $P(X=x_i) = \frac{n!}{x_1!x_2!...x_V!} p_1^{x_1} p_2^{x_2} ... p_V^{x_V}$
-    - Definitions:
-        - 확률변수 X: {0,...,V} 중에 i 가 발생할 확률 = p_i 인 실험을 n 번 실험 했을때, i 가 발생하는 횟수
-        - 사건 x_i: i 가 발생하는 횟수
-            - x_i $\in$ {0,1,...,n} (discrete)
-        - 가설 p_i: {0,...,V} 중에 i 가 발생할 확률
-            - p_1, ... , p_V 이기 때문에 parameter 은 V개
+- X has categorical distribution iff:
+    - $P(X=x_i) = p_1^{x_1} p_2^{x_2} ... p_k^{x_V}$
+        - $P(X=x_i) = p_i$
+- Definitions:
+    - 확률변수 X: {0,...,V} 중에 i 가 발생할 확률 = p_i 인 실험을 1 번 실험 했을때, i 가 발생하는 횟수
+    - 사건 x_i: i 가 발생하는 횟수
+        - x_i $\in$ {0,1} (discrete)
+    - 가설 p_i: {0,...,V} 중에 i 가 발생할 확률
+        - p_1, ... , p_V 이기 때문에 parameter 은 V개
     - 특징:
+        - NN 마지막 레이어의 softmax 값 [y1, ..., yV] == [p1, ..., pV]
         - x_i 가 categorical variable 이므로 mean, variance 계산하지 않는다
+##### multinomial distribution (다항분포):
+- X has multinomial distribution iff:
+    - $P(X=x_i) = \frac{n!}{x_1!x_2!...x_V!} p_1^{x_1} p_2^{x_2} ... p_V^{x_V}$
+- Definitions:
+    - 확률변수 X: {0,...,V} 중에 i 가 발생할 확률 = p_i 인 실험을 n 번 실험 했을때, i 가 발생하는 횟수
+    - 사건 x_i: i 가 발생하는 횟수
+        - x_i $\in$ {0,1,...,n} (discrete)
+    - 가설 p_i: {0,...,V} 중에 i 가 발생할 확률
+        - p_1, ... , p_V 이기 때문에 parameter 은 V개
+- 특징:
+    - x_i 가 categorical variable 이므로 mean, variance 계산하지 않는다
 
 #### continuous random variables: gaussian, beta, dirichlet
 ##### gaussian/normal distribution (가우시안분포/정규분포):
-    - X has gaussian distribution iff:
-        - $P(X=x) = N(\mu, \sigma^2) = \frac{1}{\sqrt{2\pi}\sigma} 
-          \exp(-\frac{(x-\mu)^2}{2\sigma^2})$
-    - Definitions:
-        - 확률변수 X: 평균 = $\mu$, 표준편차 = $\sigma$ 인 실험을 1번 했을때, 발생하는 값
-        - 사건 x: 발생하는 값
-        - 가설 $\mu, \sigma$
-    - 특징:
-        - standard gaussian distribution:
-            - Z has standard gaussian distribution iff:
-                - $P(Z=z) = N(0, 1^2) = \frac{1}{\sqrt{2\pi}}\text{exp}(-\frac{z^2}{2})$
-            - $X \sim N(\mu, \sigma^2)$ 를 정규화하면 $Z = \frac{X - \mu}{\frac{\sigma}{\sqrt{n}}} \sim N(0, 1^2)$
-            - $P(a < X < b) = P(\frac{a - \mu}{\frac{\sigma}{\sqrt{n}}} < Z < \frac{b - \mu}{\frac{\sigma}{\sqrt{n}}}) = \phi(Z=\frac{b - \mu}{\frac{\sigma}{\sqrt{n}}}) - \phi(Z=\frac{a - \mu}{\frac{\sigma}{\sqrt{n}}})$
-            - $\phi(Z=z)$: CDF($N(0, 1^2)$)
-        - 동일한 분산을 가진 분포들 중, 정규분포는 maximum entropy 를 가짐
-            - 가설 $\theta$ 를 정규분포로 설정하면, minimum prior knowledge 를 가짐
+- X has gaussian distribution iff:
+    - $P(X=x) = N(\mu, \sigma^2) = \frac{1}{\sqrt{2\pi}\sigma} 
+      \exp(-\frac{(x-\mu)^2}{2\sigma^2})$
+- Definitions:
+    - 확률변수 X: 평균 = $\mu$, 표준편차 = $\sigma$ 인 실험을 1번 했을때, 발생하는 값
+    - 사건 x: 발생하는 값
+    - 가설 $\mu, \sigma$
+- 특징:
+    - standard gaussian distribution:
+        - Z has standard gaussian distribution iff:
+            - $P(Z=z) = N(0, 1^2) = \frac{1}{\sqrt{2\pi}}\text{exp}(-\frac{z^2}{2})$
+        - $X \sim N(\mu, \sigma^2)$ 를 정규화하면 $Z = \frac{X - \mu}{\frac{\sigma}{\sqrt{n}}} \sim N(0, 1^2)$
+        - $P(a < X < b) = P(\frac{a - \mu}{\frac{\sigma}{\sqrt{n}}} < Z < \frac{b - \mu}{\frac{\sigma}{\sqrt{n}}}) = \phi(Z=\frac{b - \mu}{\frac{\sigma}{\sqrt{n}}}) - \phi(Z=\frac{a - \mu}{\frac{\sigma}{\sqrt{n}}})$
+        - $\phi(Z=z)$: CDF($N(0, 1^2)$)
+    - 동일한 분산을 가진 분포들 중, 정규분포는 maximum entropy 를 가짐
+        - 가설 $\theta$ 를 정규분포로 설정하면, minimum prior knowledge 를 가짐
 
 ## Statistics
 
