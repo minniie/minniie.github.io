@@ -5,15 +5,5 @@ date:   2021-07-26 22:58:00
 categories: 111
 tags: featured
 image: /assets/article_images/2021-07-26/wallpaper.jpg
+use_dummy: true
 ---
-
-<!DOCTYPE html>
-<html>
-<body>
-
-<h1 style="color:blue;">A Blue Heading</h1>
-
-<p style="color:red;">A red paragraph.</p>
-
-</body>
-</html>
