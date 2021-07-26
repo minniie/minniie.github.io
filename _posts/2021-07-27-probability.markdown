@@ -109,23 +109,23 @@ line-height: 3.5
 - continuous random variables: gaussian, beta, dirichlet
 
 #### bernoulli distribution (베르누이분포):
-- X has bernoulli distribution iff:
+- X has bernoulli distribution iff:<br>
 <span>&ensp;</span><span style="line-height: 1.0;">○ $P(X=x) = p^x * (1-p)^{1-x}$</span>
         - $P(X=1) = p$
         - $P(X=0) = 1-p$
-- Definitions:
-<span>&ensp;</span><span style="line-height: 1.0;">○ 확률변수 X: {0,1} 중에 1 이 발생할 확률 = p 인 실험을 1 번 실험 했을때, 1 이 발생하는 횟수</span>
+- Definitions:<br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ 확률변수 X: {0,1} 중에 1 이 발생할 확률 = p 인 실험을 1 번 실험 했을때, 1 이 발생하는 횟수</span><br>
 <span>&ensp;</span><span style="line-height: 1.0;">○ 사건 x: 1 이 발생하는 횟수</span>
-        - x $\in$ {0,1} (discrete)
+        - x $\in$ {0,1} (discrete)<br>
 <span>&ensp;</span><span style="line-height: 1.0;">○ 가설 p: {0,1} 중에 1 이 발생할 확률</span>
         - p 이기 때문에 parameter 1개
-- Example:
-<span>&ensp;</span><span style="line-height: 1.0;">○ 확률변수 X: {뒷면, 앞면} 중에 앞면이 발생할 확률 = p 인 실험을 1번 실험 했을때, 앞면이 발생하는 횟수</span>
-<span>&ensp;</span><span style="line-height: 1.0;">○ 사건 x: 앞면이 발생하는 횟수</span>
+- Example:<br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ 확률변수 X: {뒷면, 앞면} 중에 앞면이 발생할 확률 = p 인 실험을 1번 실험 했을때, 앞면이 발생하는 횟수</span><br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ 사건 x: 앞면이 발생하는 횟수</span><br>
 <span>&ensp;</span><span style="line-height: 1.0;">○ 가설 p: {뒷면, 앞면} 중에 앞면이 발생할 확률</span>
-- 특징:
-<span>&ensp;</span><span style="line-height: 1.0;">○ mean = E(X) = p</span>
-<span>&ensp;</span><span style="line-height: 1.0;">○ variance  = Var(X) = p(1-p)</span>
+- 특징:<br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ mean = E(X) = p</span><br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ variance  = Var(X) = p(1-p)</span><br>
 <span>&ensp;</span><span style="line-height: 1.0;">○ special case of binomial distribution when n=1</span>
         
 #### binomial distribution (이항분포):
