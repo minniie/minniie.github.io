@@ -112,7 +112,7 @@ line-height: 3.5
 - X has bernoulli distribution iff:<br>
 <span>&ensp;</span><span style="line-height: 1.0;">○ $P(X=x) = p^x * (1-p)^{1-x}$</span><br>
 <span>&ensp;</span><span style="line-height: 1.0;">○ $P(X=1) = p$</span><br>
-<span>&ensp;</span><span style="line-height: 1.0;">○ P(X=0) = 1-p$</span>
+<span>&ensp;</span><span style="line-height: 1.0;">○ $P(X=0) = 1-p$</span>
 - Definitions:<br>
 <span>&ensp;</span><span style="line-height: 1.0;">○ 확률변수 X: {0,1} 중에 1 이 발생할 확률 = p 인 실험을 1 번 실험 했을때, 1 이 발생하는 횟수</span><br>
 <span>&ensp;</span><span style="line-height: 1.0;">○ 사건 x: 1 이 발생하는 횟수</span><br>
@@ -129,43 +129,43 @@ line-height: 3.5
 <span>&ensp;</span><span style="line-height: 1.0;">○ special case of binomial distribution when n=1</span>
         
 #### binomial distribution (이항분포):
-- X has binomial distribution iff:
-    - $P(X=x) = \binom{n}{x} p^x (1-p)^{n-x}$
-- Definitions:
-    - 확률변수 X: {0,1} 중에 1 이 발생할 확률 = p 인 실험을 n 번 실험 했을때, 1 이 발생하는 횟수
-    - 사건 x: 1 이 발생하는 횟수
-        - x $\in$ {0,1,...,n} (discrete)
-    - 가설 p: {0,1} 중에 1 이 발생할 확률
-        - p 이기 때문에 parameter 1개
-- 특징:
-    - mean = E(X) = np
-    - variance = Var(X) = np(1-p)
+- X has binomial distribution iff:<br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ $P(X=x) = \binom{n}{x} p^x (1-p)^{n-x}$</span>
+- Definitions:<br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ 확률변수 X: {0,1} 중에 1 이 발생할 확률 = p 인 실험을 n 번 실험 했을때, 1 이 발생하는 횟수</span><br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ 사건 x: 1 이 발생하는 횟수</span><br>
+<span>&emsp;</span><span style="line-height: 1.0;">● x $\in$ {0,1,...,n} (discrete)</span><br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ 가설 p: {0,1} 중에 1 이 발생할 확률</span><br>
+<span>&emsp;</span><span style="line-height: 1.0;">● p 이기 때문에 parameter 1개</span>
+- 특징:<br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ mean = E(X) = np</span><br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ variance = Var(X) = np(1-p)</span>
 
 #### categorial distribution (카테고리분포):
-- X has categorical distribution iff:
-    - $P(X=x_i) = p_1^{x_1} p_2^{x_2} ... p_k^{x_V}$
-        - $P(X=x_i) = p_i$
-- Definitions:
-    - 확률변수 X: {0,...,V} 중에 i 가 발생할 확률 = p_i 인 실험을 1 번 실험 했을때, i 가 발생하는 횟수
-    - 사건 x_i: i 가 발생하는 횟수
-        - x_i $\in$ {0,1} (discrete)
-    - 가설 p_i: {0,...,V} 중에 i 가 발생할 확률
-        - p_1, ... , p_V 이기 때문에 parameter 은 V개
-    - 특징:
-        - NN 마지막 레이어의 softmax 값 [y1, ..., yV] == [p1, ..., pV]
-        - x_i 가 categorical variable 이므로 mean, variance 계산하지 않는다
+- X has categorical distribution iff:<br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ $P(X=x_i) = p_1^{x_1} p_2^{x_2} ... p_k^{x_V}$</span><br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ $P(X=x_i) = p_i$</span>
+- Definitions:<br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ 확률변수 X: {0,...,V} 중에 i 가 발생할 확률 = p_i 인 실험을 1 번 실험 했을때, i 가 발생하는 횟수</span><br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ 사건 x_i: i 가 발생하는 횟수<</span><br>
+<span>&emsp;</span><span style="line-height: 1.0;">● x_i $\in$ {0,1} (discrete)</span><br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ 가설 p_i: {0,...,V} 중에 i 가 발생할 확률</span><br>
+<span>&emsp;</span><span style="line-height: 1.0;">● p_1, ... , p_V 이기 때문에 parameter 은 V개</span>
+- 특징:<br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ NN 마지막 레이어의 softmax 값 [y1, ..., yV] == [p1, ..., pV]</span><br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ x_i 가 categorical variable 이므로 mean, variance 계산하지 않는다</span>
 
 #### multinomial distribution (다항분포):
 - X has multinomial distribution iff:
-    - $P(X=x_i) = \frac{n!}{x_1!x_2!...x_V!} p_1^{x_1} p_2^{x_2} ... p_V^{x_V}$
+<span>&ensp;</span><span style="line-height: 1.0;">○ $P(X=x_i) = \frac{n!}{x_1!x_2!...x_V!} p_1^{x_1} p_2^{x_2} ... p_V^{x_V}$</span>
 - Definitions:
-    - 확률변수 X: {0,...,V} 중에 i 가 발생할 확률 = p_i 인 실험을 n 번 실험 했을때, i 가 발생하는 횟수
-    - 사건 x_i: i 가 발생하는 횟수
+<span>&ensp;</span><span style="line-height: 1.0;">○ 확률변수 X: {0,...,V} 중에 i 가 발생할 확률 = p_i 인 실험을 n 번 실험 했을때, i 가 발생하는 횟수</span>
+<span>&ensp;</span><span style="line-height: 1.0;">○ 사건 x_i: i 가 발생하는 횟수</span>
         - x_i $\in$ {0,1,...,n} (discrete)
-    - 가설 p_i: {0,...,V} 중에 i 가 발생할 확률
+<span>&ensp;</span><span style="line-height: 1.0;">○ 가설 p_i: {0,...,V} 중에 i 가 발생할 확률</span>
         - p_1, ... , p_V 이기 때문에 parameter 은 V개
 - 특징:
-    - x_i 가 categorical variable 이므로 mean, variance 계산하지 않는다
+<span>&ensp;</span><span style="line-height: 1.0;">○ x_i 가 categorical variable 이므로 mean, variance 계산하지 않는다</span>
 
 #### gaussian/normal distribution (가우시안분포/정규분포):
 - X has gaussian distribution iff:
