@@ -5,8 +5,6 @@ date:   2021-07-27 05:00:00
 categories: 확률
 tags: notes
 image: /assets/article_images/2021-07-27-probability/wallpaper.JPG
-use_math: true
-comments: true
 ---
 <ul id="markdown-toc">
   <li><a href="#평서문-어미" id="markdown-toc-평서문-어미">평서문 어미</a>    <ul>
