@@ -110,9 +110,9 @@ line-height: 3.5
 
 #### bernoulli distribution (베르누이분포):
 - X has bernoulli distribution iff:<br>
-<span>&ensp;</span><span style="line-height: 1.0;">○ $P(X=x) = p^x * (1-p)^{1-x}$</span>
-        - $P(X=1) = p$
-        - $P(X=0) = 1-p$
+<span>&ensp;</span><span style="line-height: 1.0;">○ $P(X=x) = p^x * (1-p)^{1-x}$</span><br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ $P(X=1) = p$</span><br>
+<span>&ensp;</span><span style="line-height: 1.0;">○ P(X=0) = 1-p$</span>
 - Definitions:<br>
 <span>&ensp;</span><span style="line-height: 1.0;"><p>○ 확률변수 X: {0,1} 중에 1 이 발생할 확률 = p 인 실험을 1 번 실험 했을때, 1 이 발생하는 횟수<br>
 ○ 사건 x: 1 이 발생하는 횟수<br>
