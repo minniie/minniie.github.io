@@ -5,7 +5,6 @@ date:   2021-07-27 22:58:00
 categories: 확률
 tags: featured
 image: /assets/article_images/2021-07-26/wallpaper.jpg
-use_math: true
 comments: true
 ---
 
@@ -29,7 +28,7 @@ comments: true
     - continuous random variable(연속확률변수): event 의 type 이 uncountable 한 경우
         - uncountable: uncountably infinite (real number)
 - probability mass function: for discrete X, input: x, output: P(X=x)
-    - $\sum_{x \in X} P(X=x) = 1$
+    - <p>$\sum_{x \in X} P(X=x) = 1$</p>
     - P(X=x) in (0,1)
 - probability density function: for continuous X, input: x, output: P(X=x)
     - $\int_{x \in X} P(X=x) = 1$
