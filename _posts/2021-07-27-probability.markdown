@@ -12,14 +12,14 @@ line-height: 3.5
 
 ## Definitions
 
-#### sample: 자연의 동일한 조건 내에서 관측한 것
-- sample 1 = 1, sample 2 = 0, sample 3 = 1
+<span style="line-height: 0.8;">#### sample: 자연의 동일한 조건 내에서 관측한 것<br>
+- sample 1 = 1, sample 2 = 0, sample 3 = 1<br>
 
-#### data: sample 의 집합
-- data = {1,0,1}
+#### data: sample 의 집합<br>
+- data = {1,0,1}<br>
 
-#### event: sample 의 종류
-- event 1 = 1, event 2 = 0
+#### event: sample 의 종류<br>
+- event 1 = 1, event 2 = 0</span>
 
 #### event space: event 의 집합
 - event space = {1,0}
