@@ -3,7 +3,7 @@ layout: post
 title:  "확률"
 date:   2021-07-27 05:00:00
 categories: 확률
-tags: featured
+tags: notes
 image: /assets/article_images/2021-07-27-probability/wallpaper.JPG
 use_math: true
 comments: true
