@@ -13,13 +13,17 @@ comments: true
 
 #### sample: 자연의 동일한 조건 내에서 관측한 것
 - sample 1 = 1, sample 2 = 0, sample 3 = 1
+
 #### data: sample 의 집합
 - data = {1,0,1}
+
 #### event: sample 의 종류
 - event 1 = 1, event 2 = 0
+
 #### event space: event 의 집합
 - event space = {1,0}
 - ~ state space
+
 #### random variable(확률변수): 자연에서 일어나는 것들을 수학적으로 설명하기 위한 수단
 - variable: 확률변수는 각 사건을 값으로 가진다
 - function: 각 사건에 그 사건이 발생할 확률이 매핑되어 있다
