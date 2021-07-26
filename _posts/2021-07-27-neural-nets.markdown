@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "신경망"
-date:   2021-07-27 22:58:00
+date:   2021-07-27 07:14:00
 categories: 신경망
 tags: featured
-image: /assets/article_images/2021-07-26/wallpaper.jpg
+image: /assets/article_images/2021-07-27-neural-nets/wallpaper.JPG
 use_math: true
 comments: true
 ---
