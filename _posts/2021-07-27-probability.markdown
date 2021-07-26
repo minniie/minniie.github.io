@@ -28,10 +28,12 @@ comments: true
 - variable: 확률변수는 각 사건을 값으로 가진다
 - function: 각 사건에 그 사건이 발생할 확률이 매핑되어 있다
 - P(X=x): X is random variable, x is an event
-- discrete random variable(이산확률변수): event 의 type 이 countable 한 경우
-  - countable: finite (동전, 주사위) or countably infinite (integers)
-- continuous random variable(연속확률변수): event 의 type 이 uncountable 한 경우
-  - uncountable: uncountably infinite (real number)
+
+#### discrete random variable(이산확률변수): event 의 type 이 countable 한 경우
+- countable: finite (동전, 주사위) or countably infinite (integers)
+
+#### continuous random variable(연속확률변수): event 의 type 이 uncountable 한 경우
+- uncountable: uncountably infinite (real number)
 
 #### probability mass function: for discrete X, input: x, output: P(X=x)
 - $\sum_{x \in X} P(X=x) = 1$
@@ -53,9 +55,9 @@ comments: true
 
 #### expectation(기댓값):
 - if X == variable, X 의 값을 이미 알고 있음
-- if X == random variable, X 의 값을 모르고 있음
-    - 이때 대신에 X 의 기댓값을 알수있음
-    - X 가 가지는 모든 event x * event x 가 발생할 확률
+- if X == random variable, X 의 값을 모르고 있음<br>
+  ◦ 이때 대신에 X 의 기댓값을 알수있음<br>
+  ◦ X 가 가지는 모든 event x * event x 가 발생할 확률<br>
 - $E_{X\sim P} (X)$: random variable X 는 probability distribution P 를 따른다
 
 #### mean: 해당 확률변수의 기댓값
