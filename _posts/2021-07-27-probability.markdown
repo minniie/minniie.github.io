@@ -26,7 +26,7 @@ line-height: 3.5
 - ~ state space
 
 #### random variable(확률변수): 자연에서 일어나는 것들을 수학적으로 설명하기 위한 수단
-- variable: 확률변수는 각 사건을 값으로 가진다
+<p style="text-indent: 25px;">variable: 확률변수는 각 사건을 값으로 가진다kkkkㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ ㅇ ㅇ ㅇㅇ ㅇ ㅇ</p>
 - function: 각 사건에 그 사건이 발생할 확률이 매핑되어 있다
 - P(X=x): X is random variable, x is an event
 - discrete random variable(이산확률변수): event 의 type 이 countable 한 경우
