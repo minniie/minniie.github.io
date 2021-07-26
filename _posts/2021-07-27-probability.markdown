@@ -15,13 +15,13 @@ comments: true
 
 ### probability density function: for continuous X, input: x, output: P(X=x)
 
-- mean: 해당 확률변수의 기댓값
-    - $E(X) = \sum_{x \in X}{x * P(X=x)}$
-- variance: 해당 확률변수가 얼마나 퍼져있는지
-    - $Var(X) = \sum_{x \in X}{(x-E(X))^2} * P(X=x)$
-- bias: 해당 확률변수의 sample mean 과 real/latent mean 이 얼마나 차이나는지 (?)
-- probabilistic == stochastic == uncertain
-- frequentist probability: p = 특정 사건의 빈도 / 모든 사건들의 빈도
+◦ mean: 해당 확률변수의 기댓값<br>
+      ◦ $E(X) = \sum_{x \in X}{x * P(X=x)}$
+◦variance: 해당 확률변수가 얼마나 퍼져있는지<br>
+   ◦$Var(X) = \sum_{x \in X}{(x-E(X))^2} * P(X=x)$<br>
+◦ bias: 해당 확률변수의 sample mean 과 real/latent mean 이 얼마나 차이나는지 (?)<br>
+◦ probabilistic == stochastic == uncertain<br>
+◦ frequentist probability: p = 특정 사건의 빈도 / 모든 사건들의 빈도<br>
     - 이미 발생한 과거의 사건들을 설명
 - bayesian probability: p = 특정 사건의 확실성 (level of certainty)
     - 앞으로 발생할 미래의 사건들을 설명
@@ -29,15 +29,15 @@ comments: true
 
 ## Properties of random variables
 
-- Definitions
+1. Definitions
     - A, B: random variables
     - a, b: events
-- Joint probability: P(A,B) = P(A $\cap$ B) = P(A|B) * P(B) = P(B|A) * P(A)
+2. Joint probability: P(A,B) = P(A $\cap$ B) = P(A|B) * P(B) = P(B|A) * P(A)
     - B 가 발생하고 A 가 발생할 확률
     - A 가 발생하고 B 가 발생할 확률
     - event space = {A,B} (cartesian of two random variables)
     - Bayes' Rule
-- Conditional probability: P(A|B) = P(B|A) * P(A) / P(B)
+3. Conditional probability: P(A|B) = P(B|A) * P(A) / P(B)
     - B 가 발생한 상황이 자연에서 새로운 조건으로 주어졌을때, A 가 발생할 확률
     - event space = {A}
 - Marginal probability: P(A) = $\sum_{b \in B}P(A, B=b) = \sum_{b\in B}P(A|b)*P(b)$
