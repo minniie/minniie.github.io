@@ -108,17 +108,17 @@ line-height: 3.5
 - p: parameter of the distribution == 가설 == 분포의 모양을 결정
 
 #### discrete random variables: bernoulli, binomial, categorical, multinomial
-##### bernoulli distribution (베르누이분포):
-- X has bernoulli distribution iff:
-    - $P(X=x) = p^x * (1-p)^{1-x}$
-  - $P(X=1) = p$
-  - $P(X=0) = 1-p$
-- Definitions:
- - 확률변수 X: {0,1} 중에 1 이 발생할 확률 = p 인 실험을 1 번 실험 했을때, 1 이 발생하는 횟수
-    - 사건 x: 1 이 발생하는 횟수
-        - x $\in$ {0,1} (discrete)
-    - 가설 p: {0,1} 중에 1 이 발생할 확률
-        - p 이기 때문에 parameter 1개
+<p>bernoulli distribution (베르누이분포):<br>
+- X has bernoulli distribution iff:<br>
+    - $P(X=x) = p^x * (1-p)^{1-x}$<br>
+  - $P(X=1) = p$<br>
+  - $P(X=0) = 1-p$<br>
+- Definitions:<br>
+ - 확률변수 X: {0,1} 중에 1 이 발생할 확률 = p 인 실험을 1 번 실험 했을때, 1 이 발생하는 횟수<br>
+    - 사건 x: 1 이 발생하는 횟수<br>
+        - x $\in$ {0,1} (discrete)<br>
+    - 가설 p: {0,1} 중에 1 이 발생할 확률<br>
+        - p 이기 때문에 parameter 1개<br>
 - Example:
     - 확률변수 X: {뒷면, 앞면} 중에 앞면이 발생할 확률 = p 인 실험을 1번 실험 했을때, 앞면이 발생하는 횟수
     - 사건 x: 앞면이 발생하는 횟수
@@ -126,7 +126,8 @@ line-height: 3.5
 - 특징:
     - mean = E(X) = p
     - variance  = Var(X) = p(1-p)
-    - special case of binomial distribution when n=1
+    - special case of binomial distribution when n=1</p>
+    
 ##### binomial distribution (이항분포):
 - X has binomial distribution iff:
     - $P(X=x) = \binom{n}{x} p^x (1-p)^{n-x}$
