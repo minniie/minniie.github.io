@@ -7,13 +7,15 @@ tags: featured
 image: /assets/article_images/2021-07-26/wallpaper.jpg
 ---
 
+# 확률
+
 ## Definitions
 
-1. sample: 자연의 동일한 조건 내에서 관측한 것
+- sample: 자연의 동일한 조건 내에서 관측한 것
     - sample 1 = 1, sample 2 = 0, sample 3 = 1
-2. data: sample 의 집합
+- data: sample 의 집합
     - data = {1,0,1}
-3. event: sample 의 종류
+- event: sample 의 종류
     - event 1 = 1, event 2 = 0
 - event space: event 의 집합
     - event space = {1,0}
@@ -154,4 +156,122 @@ image: /assets/article_images/2021-07-26/wallpaper.jpg
             - 동일한 분산을 가진 분포들 중, 정규분포는 maximum entropy 를 가짐
                 - 가설 $\theta$ 를 정규분포로 설정하면, minimum prior knowledge 를 가짐
 
+## Statistics
 
+- Notations:
+    - $X$: 모집단을 나타내는 확률변수
+        - $E(X) = \mu, Var(X) = \sigma^2$ 인 "any" 분포를 따름
+    - $\bar X$: 샘플의 평균을 나타내는 확률변수
+        - $\frac{1}{n}\sum_{i=1}^n x_i$
+        - $X$ 에서 뽑힌 n 개의 샘플의 평균
+- 1) Law of large numbers (큰 수의 법칙)
+    - 정의:
+        - If n >> 30, then $E(\bar X) \approx E(X)$
+    - 의미:
+        - 모집단에서 n개의 샘플을 한번 뽑는다
+        - 이때 샘플의 수가 크면, 샘플의 평균은 모집단의 평균과 비슷하다
+- 2) Central limit theorem (중심극한정리)
+    - 정의:
+        - if n >> 30, then $\bar X \sim N(\mu, \frac{\sigma^2}{n})$
+    - 의미:
+        - 모집단에서 n개의 샘플을 뽑는 실험을 무한히 반복한다고 가정
+        - 그러면 각 실험에서 뽑힌 n개의 샘플의 평균을 어떤 확률변수로 설정할수 있음
+        - 이때 샘플의 수가 크면, 모집단이 실제로 어떤 분포를 따르냐에 상관없이, 샘플의 평균은 정규분포를 따른다
+        - 결국 실제로 실험을 여러번 하지 않아도 샘플의 평균의 기댓값과 표준편차를 구할수 있다
+        - 또한, 하나의 확률변수에서 n개의 샘플을 뽑는 경우 뿐만 아니라, 동일한 분포를 따르는 n개의 독립 확률변수에서 각각 샘플을 뽑는 경우에도 적용된다
+- p-value
+    - 의미:
+        - p: significance probability
+            - null hypothesis 와 현재 hypothesis 의 겹치는 정도
+        - a: significance level
+            - a $\in$ (0,1)
+    - p < a: null hypothesis 기각
+    - p > a: null hypothesis 기각 불가
+
+## MLE vs MAP
+
+- Definitions:
+    - h: hypothesis
+    - D: evidence, data, samples
+    - P(D|h): likelihood (가설이 주어졌을 때 데이터의 분포)
+    - P(h): prior (데이터를 관측하기 전 가설의 분포)
+    - P(h|D): posterior (데이터를 관측한 후 가설의 분포)
+    - conjugate prior:
+        - 정의: given P(D|h), conjugate prior = P(h) s.t. P(h) $\sim$ P(h|D)
+            - P(D|h) 의 분포가 주어졌을때, P(h) 의 분포와 P(h|D) 의 분포가 같은 종류가 되도록 만들어주는 P(h) 의 분포
+        - 의미: MAP 에서 P(h|D) 를 구할수 있도록 함
+        - uninformative prior: 가설에 대한 사전지식을 최대한 배제하기 위해 prior 을 uniform distribution 으로 만들어주는 것
+        - 종류:
+            - given P(D|h) ~ binomial:
+                - prior P(h) ~ Beta($\alpha, \beta$)
+                    - $\alpha, \beta \in R$
+                        - 1의 횟수에 대한 사전지식: $\alpha-1$
+                        - 0의 횟수에 대한 사전지식: $\beta-1$
+                    - uninformative prior: $\alpha=1, \beta=1$
+                        - 1의 횟수, 0의 횟수에 대한 사전지식을 0 으로 설정
+                    - E(h) = $\frac{\alpha}{\alpha+\beta}$
+                - posterior P(h|D) ~ Beta($\alpha+x, \beta+n-x$)
+                    - x: {0,1} 중 1이 발생한 실험 횟수
+                    - n: 전체 실험 횟수
+                    - E(h|D) = $\frac{\alpha+x}{\alpha+x+\beta+n-x} = \frac{\alpha+x}{\alpha+\beta+n}$
+                - h = E(h|D)
+            - given P(D|h) ~ multinomial:
+                - prior P(h) ~ Dirichlet($\alpha$)
+                    - $\alpha \in R^V$
+                        - class i 에 대한 사전지식: $\alpha_i-1$
+                    - uninformative prior: $\alpha = [1]^V$
+                        - 각 class 에 대한 사전지식을 0 으로 설정
+                    - E(h_i) = $\frac{{\alpha}_i}{\sum_{k=1}^{V}a_k}$
+                - posterior P(h|D) ~ Dirichlet($\alpha + x$)
+                    - $x = [x_1, ..., x_V]$
+                    - E(h_i|D) = $\frac{{\alpha}_i+x_i}{\sum_{k=1}^{V}a_k+x_k}$
+                - h_i = E(h_i|D)
+- MLE / MAP: 가설을 찾는/검증하는 방법
+- MLE(maximum likelihood estimate):
+    - 정의:
+        - $\argmax_{h}P(D|h)$
+        - 데이터의 likelihood 를 maximize 하는 가설 찾기
+    - 의미:
+        - 가설을 찾을때 주어진 데이터에서만 정보를 얻음
+        - 가설을 확률변수로 보지 않고 deterministic 한 일반변수로 봄
+        - 즉, P(h) 라는 것은 존재하지 않는다고 가정
+    - 장점:
+        - 가설에 대한 사전지식(일종의 선입견) 을 배제하고 오로지 데이터에서만 정보를 얻기 때문에 객관적이라고 할수 있음
+    - 단점:
+        - 가설에 대한 obvious 사전지식이 있는 경우, 정보를 다 활용하지 못하는 것임
+        - 데이터가 엄청 적은 경우, 말이 안되는(?) 가설을 얻을수 있음
+            - ex. 동전을 1번 던져서 앞면이 나온걸 보고 앞면이 나올 확률 = 1 인 가설을 선택하는것
+    - in ML:
+        - 각 iteration 의 $\theta$ 가 주어졌을 때, 여기서 데이터 (X,Y) 가 나왔을 확률 (X 를 각 iteration 의 $\theta$ 의 입력으로 넣었을 때 Y 가 출력될 확률)을 maximize 하는 $\theta$ 를 찾는것
+- MAP(maximum a posteriori):
+    - 정의:
+        - $\argmax_{h} P(h|D) \propto P(D|h) * P(h)$
+        - 가설의 posterior 을 maximize 하는 가설 찾기
+    - 의미:
+        - 가설을 찾으려고 할때 주어진 데이터와 가설에 대한 사전지식에서 정보를 얻음
+        - 가설을 확률변수로 보는 것
+        - 즉, P(h) 가 존재한다고 가정 (h 를 컨트롤 하는 $\alpha, \beta$ 가 또 있다)
+    - 장점:
+        - 가설에 대한 obvious 사전지식이 있는 경우, 이 정보를 활용할수 있음
+        - 데이터가 엄청 적은 경우, 사전지식을 활용해 적은 데이터의 영향력을 mitigate 할수 있음
+            - ex. $\alpha=10, \beta=10$ 으로 설정하면, 동전을 1번 던져서 앞면이 나온걸 보고 앞면이 나올 확률 = ($\alpha  + 1$이 나온 실험 횟수) / ($\alpha+\beta+$ 총 실험 횟수) = $(10 + 1)/(10+10+1) = 11/21$
+    - 단점:
+        - 가설에 대한 사전지식(일종의 선입견) 이 잘못되면 잘못된 가설을 찾게될 수 있음
+    - in ML:
+        - 데이터 (X,Y) 가 주어졌을때, 여기서 가설 $\theta$ 이 맞을 확률을 maximize 하는 $\theta$ 를 찾는 것 ~ 각 가설 $\theta$ 가 발생할 확률 * 각 가설 $\theta$ 가 주어졌을 때 여기서 데이터 (X,Y) 가 나왔을 확률
+        - weight regularization
+- example: 동전 던지기
+    - "앞면이 나올 확률이 p 인 동전을 100번 던졌는데 60번 앞면이 나왔다. 이때 p 를 구하시오."
+    - 1) D, h 설정
+        - D: 동전을 n 번 던졌을 때 x 번 앞면이 나오는 횟수
+            - n: 100
+            - x: 60
+        - h: p
+        - P(D|h) ~ binomial = $\binom{100}{60}h^{60} * (1-h)^{40}$
+    - 2) MLE: $\argmax_{h}P(D|h)$
+        - $\frac{d}{dh}P(D|h) = 0$ 이 되는 $h$
+        - 식을 풀면 $h = \frac{x}{n} = \frac{60}{100}$
+    - 3) MAP: $\argmax_{h}P(h|D) \propto P(D|h)*P(h)$
+        - uninformative prior: $\alpha=1, \beta=1$
+        - $P(h)\sim beta(1,1)$
+        - 식을 풀면 $h = E(h|D) = \frac{\alpha+x}{\alpha+\beta+n} = \frac{1+60}{1+1+100} = \frac{61}{102}$
