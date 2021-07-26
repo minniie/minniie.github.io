@@ -11,9 +11,13 @@ comments: true
 
 ## Definitions
 
-- probability density function: for continuous X, input: x, output: P(X=x)
-    > $\int_{x \in X} P(X=x) = 1$
-    > P(X=x) might be > 1 if size(event space/interval) < 1
+### probability density function: for continuous X, input: x, output: P(X=x)
+
+<p>hypothesis: 변수 or 확률변수의 값을 가정</p>
+<p style="margin-left: 40px">This text is indented.</p>
+
+    >> $\int_{x \in X} P(X=x) = 1$
+    >> P(X=x) might be > 1 if size(event space/interval) < 1
 - hypothesis: 변수 or 확률변수의 값을 가정
     > h=p
 - hypothesis testing: 가설이 진짜인지 검증 (?)
