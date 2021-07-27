@@ -7,7 +7,7 @@ tags: notes
 image: /assets/article_images/2021-07-27-ml/wallpaper.JPG
 use_math: true
 ---
-$$\begin{aligned} D(P||Q) &= \sum_{x=1}^{n} P(x_i)\log \frac{P(x_i)}{Q(x_i)}  \\ & =  \sum_{x=1}^{n} P(x_i)\log P(x_i) - \sum_{x=1}^{n} P(x_i)\log Q(x_i) \\ \end{aligned}$$
+$$\begin{aligned} D(P \vert \vert Q) &= \sum_{x=1}^{n} P(x_i)\log \frac{P(x_i)}{Q(x_i)}  \\ & =  \sum_{x=1}^{n} P(x_i)\log P(x_i) - \sum_{x=1}^{n} P(x_i)\log Q(x_i) \\ \end{aligned}$$
 
 ## Machine learning
 
