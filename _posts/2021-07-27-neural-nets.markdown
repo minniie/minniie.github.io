@@ -37,7 +37,7 @@ comments: true
     - input: he_n (context vector)
     - output: distribution over output sequence
     - i-th decoder block
-        - input: y^_(j-1) + hd_(j-1) + he_n
+        - input: y^\_(j-1) + hd\_(j-1) + he_n
         - output: y^_j + hd_j
         - function: ?
 
