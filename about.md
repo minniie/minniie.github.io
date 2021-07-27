@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-bio: <span style="color:#E47833;">Princeton '21+1</span>
+bio: <span style="color:#E47833; font-weight:bold;">Princeton '21+1</span>
 
 <p>&#128047;</p>
 
