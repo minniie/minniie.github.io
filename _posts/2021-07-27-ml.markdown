@@ -14,8 +14,8 @@ use_math: true
     - data: X
     - feature: Y (== pattern, label)
     - X, Y are random variables
-        - P(Y|X) 의 조건부 확률을 찾는 것
-        - P(Y|X) 의 event space == P(Y) 의 event space
+        - P(Y&#124;X) 의 조건부 확률을 찾는 것
+        - P(Y&#124;X) 의 event space == P(Y) 의 event space
             - 따라서 모델 loss 를 설정할때 P(Y) 와 Q(Y) 를 비교하는 것임
         - Y $\approx$ $\theta$(X) 에서 $\theta$ 는 hypothesis
     - 자연에 data 는 무수히 많음. 아무 관측값이 data 가 될수있음. 하지만 우리는 여기서 중요 정보만 알아내고 싶음. 이 중요 정보가 feature 임.
@@ -40,10 +40,10 @@ use_math: true
                             - 이때 이 $\theta$(X) 를 logit 으로 해석함
                             - odds: event 가 발생할 확률 / event 가 발생하지 않을 확률
                                 - P(Y=1) / (1-P(Y=1))
-                                - odds $\in (0, \infin)$
+                                - odds $\in (0, \infty)$
                             - logit: odds 에 log 를 취한 것
                                 - log(P(Y=1) / (1-P(Y=1))) = $\theta$(X)
-                                - logit $\in (-\infin, \infin)$
+                                - logit $\in (-\infty, \infty)$
                             - 식을 풀면 P(Y=1) = 1 / (1 + exp(-$\theta$(X))
                             - P(Y=1) $\in (0, 1)$
                         - decision boundary for binary classification:
