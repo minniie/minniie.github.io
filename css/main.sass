@@ -23,17 +23,10 @@ $font-sans: Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif
 %vertical-rhythm
   margin-bottom: $rs
   
-// define it
-@mixin selection {
-    ::-moz-selection { @content; }
-    ::selection { @content; }
-}
 
-// use it
-@include selection {
-   background: #8B636C;
-   color: #fff;
-}
+selection
+  background: #8B636C
+  color: #fff
   
 
 main
