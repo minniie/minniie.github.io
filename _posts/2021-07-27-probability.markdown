@@ -220,3 +220,8 @@ use_math: true
                         - class i 에 대한 사전지식: $\alpha_{i}-1$
                     - uninformative prior: $\alpha = [1]^V$
                         - 각 class 에 대한 사전지식을 0 으로 설정
+                    - E(h_i) = $\frac{{\alpha}_i}{\sum_{k=1}^{V}a_k}$
+                - posterior P(h&#124;D) ~ Dirichlet($\alpha + x$)
+                    - $x = [x_1, ..., x_V]$
+                    - E(h_i \vert D) = $\frac{\alpha_i+x_i}{\sum_{k=1}^{V}a_k+x_k}$
+                - h_i = E(h_i&#124;D)
