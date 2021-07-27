@@ -7,6 +7,11 @@ tags: notes
 image: /assets/article_images/2021-07-27-ml/wallpaper.JPG
 use_math: true
 ---
+$$\begin{eqnarray} 
+y &=& x^4 + 4      \nonumber \\
+&=& (x^2+2)^2 -4x^2 \nonumber \\
+&\le&(x^2+2)^2    \nonumber
+\end{eqnarray}$$
 
 ## Machine learning
 
