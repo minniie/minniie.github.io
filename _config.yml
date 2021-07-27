@@ -35,12 +35,16 @@ remote_theme: dirkfabisch/mediator
 
 # social icons and sharing options
 social:
-  - icon:	facebook
-    url:	"" # https://www.facebook.com/minyoung.lee.mlee/
-    desc: Connect with me facebook
-    share_url: https://www.facebook.com/sharer.php
-    share_title: ?t=
-    share_link: "&amp;u="
+#  - icon:	facebook
+#    url:	"" # https://www.facebook.com/minyoung.lee.mlee/
+#    desc: Connect with me facebook
+#    share_url: https://www.facebook.com/sharer.php
+#    share_title: ?t=
+#    share_link: "&amp;u="
+  
+  - icon: linkedin
+    url: https://www.linkedin.com/in/minlee98/
+    desc: Follow me on linkedin
 
   - icon:	github
     url:	https://github.com/minniie
@@ -48,6 +52,7 @@ social:
     share_url:
     share_title:
     share_link:
+
 
 # Math equation
 markdown: kramdown
