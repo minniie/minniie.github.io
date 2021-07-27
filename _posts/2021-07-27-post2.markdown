@@ -18,7 +18,7 @@ image: /assets/article_images/2021-07-26-post1/wallpaper.jpg
   
 <p>Precept 10</p>
 <br>
-<p>Fine-Tuning Argument by Roger White</p>
+<p style="text-align:center">Fine-Tuning Argument by Roger White</p>
 <p>1.	If a fact E that we observe stands in need of explanation, and hypothesis H provides a satisfactory explanation of E that is better than any alternative explanation available, then E provides significant evidential support for H.</p>
 <p>2.	That our universe is hospitable to life stands in need of explanation.</p>
 <p>3.	That God adjusted the constants in order to allow for life to develop provides a satisfactory explanation for why our universe is life-permitting.</p>
