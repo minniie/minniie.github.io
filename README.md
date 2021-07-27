@@ -1,4 +1,4 @@
 Min's
 ========
 
-Personal blog with [theme](https://github.com/dirkfabisch/mediator).
+[Personal blog](https://minniie.github.io/) with [theme](https://github.com/dirkfabisch/mediator).
