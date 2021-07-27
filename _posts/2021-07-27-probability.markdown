@@ -35,10 +35,10 @@ use_math: true
     - P(X=x) might be > 1 if size(event space/interval) < 1
 - hypothesis: 변수 or 확률변수의 값을 가정
     - h=p
-- hypothesis testing: 가설이 진짜인지 검증 (?)
+- hypothesis testing: 가설이 참인지 검증 
 - distribution(분포): 해당 확률변수의 모든 event와 그에 해당하는 확률값을 정의/요약
     - pmf, pdf 와 동일
-- parameter: distribution 이 closed form 일 경우(?) 그 식을 결정하는 값들
+- parameter: distribution 의 식을 결정하는 값들
 - expectation(기댓값):
     - if X == variable, X 의 값을 이미 알고 있음
     - if X == random variable, X 의 값을 모르고 있음
@@ -62,18 +62,18 @@ use_math: true
 - Definitions
     - A, B: random variables
     - a, b: events
-- Joint probability: P(A,B) = P(A$\cap$B) = P(A|B) * P(B) = P(B|A) * P(A)
+- Joint probability: P(A,B) = P(A$\cap$B) = P(A&#124;B) * P(B) = P(B&#124;A) * P(A)
     - B 가 발생하고 A 가 발생할 확률
     - A 가 발생하고 B 가 발생할 확률
     - event space = {A,B} (cartesian of two random variables)
     - Bayes' Rule
-- Conditional probability: P(A|B) = P(B|A) * P(A) / P(B)
+- Conditional probability: P(A&#124;B) = P(B&#124;A) * P(A) / P(B)
     - B 가 발생한 상황이 자연에서 새로운 조건으로 주어졌을때, A 가 발생할 확률
     - event space = {A}
-- Marginal probability: P(A) = $\sum_{b \in B}P(A, B=b) = \sum_{b\in B}P(A|b)*P(b)$
+- Marginal probability: P(A) = $\sum_{b \in B}P(A, B=b) = \sum_{b\in B}P(A|b) \times P(b)$
     - 어떤 확률변수 A 의 prior 을 모를때, 또 다른 확률변수 B 의 각 사건의 prior * 각 사건이 주어졌을때 A 가 발생할 likelihood 로 구할수 있다
     - 어떤 확률변수 A 의 prior 은 모르고 likelihood 만 아는 경우
-- independence: A and B are independent iff P(A|B) = P(A) and P(B|A) = P(B)
+- independence: A and B are independent iff P(A&#124;B) = P(A) and P(B&#124;A) = P(B)
     - 어떤 확률변수의 분포가, 다른 확률변수/event 가 조건으로 주어진 상황에서의 분포와 동일하면 두 확률변수는 독립이다
 
 ## Distributions of random variables
@@ -81,7 +81,7 @@ use_math: true
 - Definitions
     - p: parameter of the distribution == 가설 == 분포의 모양을 결정
 - discrete random variables: bernoulli, binomial, categorical, multinomial
-    - bernoulli distribution (베르누이분포):
+    - <span style="color:#872657;">bernoulli distribution (베르누이분포):</span>
         - X has bernoulli distribution iff:
             - $P(X=x) = p^x * (1-p)^{1-x}$
                 - $P(X=1) = p$
@@ -122,9 +122,9 @@ use_math: true
                 - x_i $\in$ {0,1} (discrete)
             - 가설 p_i: {0,...,V} 중에 i 가 발생할 확률
                 - p_1, ... , p_V 이기 때문에 parameter 은 V개
-            - 특징:
-                - NN 마지막 레이어의 softmax 값 [y1, ..., yV] == [p1, ..., pV]
-                - x_i 가 categorical variable 이므로 mean, variance 계산하지 않는다
+        - 특징:
+            - NN 마지막 레이어의 softmax 값 [y1, ..., yV] == [p1, ..., pV]
+            - x_i 가 categorical variable 이므로 mean, variance 계산하지 않는다
     - multinomial distribution (다항분포):
         - X has multinomial distribution iff:
             - $P(X=x_i) = \frac{n!}{x_1!x_2!...x_V!} p_1^{x_1} p_2^{x_2} ... p_V^{x_V}$
