@@ -13,7 +13,7 @@ comments: true
 
 - input: a sequence of tokens <span style="color:#872657; font-weight:bold;">(x_1, x_2, ..., x_n)</span>
 - output: a sequence of tokens <span style="color:#872657; font-weight:bold;">(y_1, y_2, ..., y_m)</span>
-- hidden state: representation of current token
+- hidden state: **representation of current token**
     - <span style="color:#872657; font-weight:bold;">he_i</span>: encodes information in (x_1, ..., x_i)
     - <span style="color:#872657; font-weight:bold;">hd_j</span>: encodes information in (y_1, ..., y_j)
     - <span style="color:#872657; font-weight:bold;">he_n</span>: context vector, feature vector, representation of the input sequence
@@ -73,7 +73,7 @@ comments: true
         - 하지만 input sequence 가 길어지는 경우, 하나의 context vector 에 의미가 충분히 담기지 못함
         - 또한, 각 단어는 모든 단어로부터 정확히 같은 영향을 받지 않고, 특정 단어에 더 영향을 받음
     - 해결방법 (Attention):
-        - 각 단어를 생성할때 input sequence 전체를 한꺼번에 참조하는 것이 아니라, 특정 단어를 더 참조하도록 함
+        - **각 단어를 생성할때 input sequence 전체를 한꺼번에 참조하는 것이 아니라, 특정 단어를 더 참조하도록 함**
         - 즉, 각 단어를 decoding 할때 context vector 을 다르게 함
         - attention score 을 계산하여, encoder 의 어느 hidden state 에 더 attention 을 줄것인지 결정
 - encoder: same as RNN
@@ -88,7 +88,7 @@ comments: true
             - sfmax_i = softmax(s_1, ..., s_n)
             - hd_j = $\sum_{i}$ sfmax_i * he_i
         - 특징:
-            - 결국 각 input token 의 context 와 현재 시점의 token 의 context 가 얼마나 비슷한지가, 각 input token 의 context 를 얼마나 참조하여 다음 시점의 token 을 생성할지를 결정 (비슷할수록 많이 참조한다)
+            - 결국 각 input token 의 context 와 현재 시점의 token 의 context 가 얼마나 비슷한지가, 각 input token 의 context 를 얼마나 참조하여 다음 시점의 token 을 생성할지를 결정 (**비슷할수록 많이 참조한다**)
             - key == value
 
 ## Transformer
@@ -105,7 +105,7 @@ comments: true
 - encoder:
     - encoder block:
         - 0) x_i = x_i + p_i
-        - 1) self-attention
+        - 1) <span style="color:#872657; font-weight:bold;">self-attention</span>
             - input:
                 - 1st encoder block: x_1, ..., x_n
                 - other encoder blocks: he_1, ..., he_n of previous encoder block
@@ -124,23 +124,23 @@ comments: true
             - multi-headed self-attention
                 - multiple representation subspaces
                 - he'\_k = W_o $\boldsymbol{\cdot}$ [he'1\_k &#124; he'2\_k &#124; ... &#124; he'8\_k]
-        - 2) feed forward neural network
+        - 2) <span style="color:#872657; font-weight:bold;">feed forward neural network</span>
             - input: he'\_1, ..., he'\_n
             - output: he\_1, ..., he\_n
                 - with residual & layer normalization: he_1, ..., he_n = layer_norm(he'\_1+he\_1, ..., he'\_n+he\_n)
             - function:
                 - he_1, ..., he_n = FC2(FC1(he'\_1, ..., he'\_n))
             - 특징:
-                - 의미: 각 input token 의 representation 을 독립적으로 변형하여 feature 을 뽑는다
+                - <span style="color:#872657; font-weight:bold;">의미: 각 input token 의 representation 을 독립적으로 변형하여 feature 을 뽑는다</span>
                 - hidden state 를 larger dimension 으로 projection 했다가 다시 기존 dimension 으로 projection 한다 (왜?)
                 - O(C): 각 input token 에 대해 parallel computing 가능
-                - 나머지 input token 에 dependency 도 없음 (즉, input sequence 에 token 이 추가되어도 출력의 he'_1, ..., he'_n 값이 변하지 않음)
+                - 나머지 input token 에 dependency 도 없음 (즉, input sequence 에 token 이 추가되어도 출력의 he'\_1, ..., he'\_n 값이 변하지 않음)
         - parameters:
             - (W_q, W_k, W_v) * 8, W_o, FC1, FC2 per encoder block
             - encoder blocks do not share weights
 - decoder:
     - decoder block:
-        - 1) masked self-attention
+        - 1) <span style="color:#872657; font-weight:bold;">masked self-attention</span>
             - input:
                 - 1st decoder block: y^\_k + y_bos, y_1, ..., y_(k-1)
                     - training: y_k + y_bos, y_1, ..., y_(k-1)
@@ -158,7 +158,7 @@ comments: true
                 - 각 current token query vector 에 대해서, previous token key vectors 와 얼마나 비슷한지 similarity score 을 측정하고, 그 similarity score 로 previous token value vectors 를 weigh 한것이 각 current token 의 새로운 hidden state 임 (previous output 의 단어 중 비슷할수록 많이 참조한다)
                 - parallel computing 불가능
                 - 구현상, 각 생성될 token 에 대해 나머지 token 과의 similarity score 을 계산한 후 뒤 tokens 에 해당하는 score 들은 -inf 로 세팅한 후에 softmax 를 취해서 최종 weight 를 구한다
-        - 2) encoder-decoder attention
+        - 2) <span style="color:#872657; font-weight:bold;">encoder-decoder attention</span>
             - input: hd'\_k + k_1, ..., k_n + v_1, ..., v_n
                 - k_i = W_k $\boldsymbol{\cdot}$ he_i of last encoder block
                 - v_i = W_v $\boldsymbol{\cdot}$ he_i of last encoder block
@@ -170,15 +170,15 @@ comments: true
             - 특징:
                 - <span style="color:#872657; font-weight:bold;">의미: 각 생성될 token 의 representation 을 찾을때, 모든 input token 들의 representation 을 개별적으로, 각각 다른 정도로 참조한다</span>
                 - 각 current token query vector 에 대해서, all input token key vectors 와 얼마나 비슷한지 similarity score 을 측정하고, 그 similarity score 로 all input token value vectors 를 weigh 한것이 각 current token 의 새로운 hidden state 임 (input sequence 의 단어 중 비슷할수록 많이 참조한다)
-        - 3) feed forward neural network
+        - 3) <span style="color:#872657; font-weight:bold;">feed forward neural network</span>
             - input: hd''_k
             - output: hd_k
                 - with residual & layer normalization: hd_k = layer_norm(hd''_k+hd_k)
             - function:
                 - hd_k = FC2(FC1(hd''_k))
             - 특징:
-                - 의미: 각 생성될 token 의 representation 을 독립적으로 변형하여 feature 을 뽑는다
-        - 4) projection to vocab space
+                - <span style="color:#872657; font-weight:bold;">의미: 각 생성될 token 의 representation 을 독립적으로 변형하여 feature 을 뽑는다</span>
+        - 4) <span style="color:#872657; font-weight:bold;">projection to vocab space</span>
             - input: hd_k
             - output: y^\_k
             - function: y^\_k = softmax(Linear(hd_k))
@@ -190,7 +190,8 @@ comments: true
                 - random sampling: y^\_k = softmax(Linear(hd_k))
                 - top k sampling: y^\_k = softmax(top k of Linear(hd_k))
                     - 단점: Linear(hd_k) == broad distribution 인 경우 diverse 한 단어가 정답일수 있는 상황에서 억지로 top k 만 보게 됨
-                - top p sampling(nucleus sampling): y^\_k = CDF(softmax(Linear(hd_k))) < p
+                - top p sampling: y^\_k = CDF(softmax(Linear(hd_k))) < p
+                    - ~ nucleus sampling
                     - dynamic top k since we don't need to define k
                     - 단점: ?
                 - temperature sampling: y^\_k = softmax(Linear(hd_k) / T)
@@ -205,7 +206,7 @@ comments: true
 - 의미:
     - 기존 방법의 한계 (-):
     - 해결방안 (GPT):
-        - attention layer 을 깊이 쌓아서 더 complex 한
+        - **attention layer 을 깊이 쌓아서 더 complex 한 representation 을 가지고 다음 단어 생성**
         - 데이터 양 늘리기
         - decoder block (layer) 수 늘리기
             - small, medium, large, xl: 12, 24, 36, 48
@@ -216,12 +217,12 @@ comments: true
 - decoder:
     - 1) masked self-attention
     - 2) feed forward neural network
-- BPE(byte pair encoding):
+- **BPE(byte pair encoding)**:
     - 데이터에서 가장 많이 등장한 sequence of characters 을 merge
     - 데이터 압축
 
 ## BERT
 
-- 의미: attention layer 을 깊이 쌓아서 더 complex 한 representation 만들기
+- 의미: **attention layer 을 깊이 쌓아서 더 complex 한 representation 만들기**
 - encoder:
 - wordpiece:
