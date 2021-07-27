@@ -212,5 +212,6 @@ use_math: true
                 - posterior P(h&#124;D) ~ Beta($\alpha+x, \beta+n-x$)
                 - x: $\{0,1\}$ 중 1이 발생한 실험 횟수
                     - n: 전체 실험 횟수
-                    - E(h&#124;D) = $\frac{\alpha+x}{\alpha+x+\beta+n-x} = \frac{\alpha+x}{\alpha+\beta+n}$
+                    - E(h&#124;D) = $\frac{\alpha + x}{\alpha + x + \beta + n - x} = \frac{\alpha + x}{\alpha + \beta + n}$
+
 
