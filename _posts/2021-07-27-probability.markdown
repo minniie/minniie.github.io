@@ -19,9 +19,9 @@ use_math: true
 - event space: event 의 집합
     - event space = {1,0}
     - ~ state space
-- random variable(확률변수): 자연에서 일어나는 것들을 수학적으로 설명하기 위한 수단
-    - variable: 확률변수는 각 사건을 값으로 가진다
-    - function: 각 사건에 그 사건이 발생할 확률이 매핑되어 있다
+- random variable(확률변수): **자연에서 일어나는 것들을 수학적으로 설명하기 위한 수단**
+    - variable: <span style="color:#872657; font-weight:bold;">확률변수는 각 사건을 값으로 가진다</span>
+    - function: <span style="color:#872657; font-weight:bold;">각 사건에 그 사건이 발생할 확률이 매핑되어 있다</span>
     - P(X=x): X is random variable, x is an event
     - discrete random variable(이산확률변수): event 의 type 이 countable 한 경우
         - countable: finite (동전, 주사위) or countably infinite (integers)
@@ -43,7 +43,7 @@ use_math: true
     - if X == variable, X 의 값을 이미 알고 있음
     - if X == random variable, X 의 값을 모르고 있음
         - 이때 대신에 X 의 기댓값을 알수있음
-        - X 가 가지는 모든 event x * event x 가 발생할 확률
+        - **X 가 가지는 모든 event x * event x 가 발생할 확률**
     - $E_{X\sim P} (X)$: random variable X 는 probability distribution P 를 따른다
 - mean: 해당 확률변수의 기댓값
     - $E(X) = \sum_{x \in X}{x * P(X=x)}$
@@ -51,9 +51,9 @@ use_math: true
     - $Var(X) = \sum_{x \in X}{(x-E(X))^2} * P(X=x)$
 - bias: 해당 확률변수의 sample mean 과 real/latent mean 이 얼마나 차이나는지 (?)
 - probabilistic == stochastic == uncertain
-- frequentist probability: p = 특정 사건의 빈도 / 모든 사건들의 빈도
+- frequentist probability: **p = 특정 사건의 빈도 / 모든 사건들의 빈도**
     - 이미 발생한 과거의 사건들을 설명
-- bayesian probability: p = 특정 사건의 확실성 (level of certainty)
+- bayesian probability: **p = 특정 사건의 확실성** (level of certainty)
     - 앞으로 발생할 미래의 사건들을 설명
     - p=1 은 확실히 맞다, p=0 은 확실히 아니다
 
@@ -168,14 +168,14 @@ use_math: true
         - If n >> 30, then $E(\bar X) \approx E(X)$
     - 의미:
         - 모집단에서 n개의 샘플을 한번 뽑는다
-        - 이때 샘플의 수가 크면, 샘플의 평균은 모집단의 평균과 비슷하다
+        - <span style="font-weight:bold;">이때 샘플의 수가 크면, 샘플의 평균은 모집단의 평균과 비슷하다</span>
 - 2) Central limit theorem (중심극한정리)
     - 정의:
         - if n >> 30, then $\bar X \sim N(\mu, \frac{\sigma^2}{n})$
     - 의미:
         - 모집단에서 n개의 샘플을 뽑는 실험을 무한히 반복한다고 가정
         - 그러면 각 실험에서 뽑힌 n개의 샘플의 평균을 어떤 확률변수로 설정할수 있음
-        - 이때 샘플의 수가 크면, 모집단이 실제로 어떤 분포를 따르냐에 상관없이, 샘플의 평균은 정규분포를 따른다
+        - <span style="font-weight:bold;">이때 샘플의 수가 크면, 모집단이 실제로 어떤 분포를 따르냐에 상관없이, 샘플의 평균은 정규분포를 따른다</span>
         - 결국 실제로 실험을 여러번 하지 않아도 샘플의 평균의 기댓값과 표준편차를 구할수 있다
         - 또한, 하나의 확률변수에서 n개의 샘플을 뽑는 경우 뿐만 아니라, 동일한 분포를 따르는 n개의 독립 확률변수에서 각각 샘플을 뽑는 경우에도 적용된다
 - p-value
@@ -192,12 +192,12 @@ use_math: true
 - Definitions:
     - h: hypothesis
     - D: evidence, data, samples
-    - P(D&#124;h): likelihood (가설이 주어졌을 때 데이터의 분포)
-    - P(h): prior (데이터를 관측하기 전 가설의 분포)
-    - P(h&#124;D): posterior (데이터를 관측한 후 가설의 분포)
+    - <span style="color:#872657; font-weight:bold;">P(D&#124;h): likelihood</span> (가설이 주어졌을 때 데이터의 분포)
+    - <span style="color:#872657; font-weight:bold;">P(h): prior</span> (데이터를 관측하기 전 가설의 분포)
+    - <span style="color:#872657; font-weight:bold;">P(h&#124;D): posterior</span> (데이터를 관측한 후 가설의 분포)
     - conjugate prior:
         - 정의: given P(D&#124;h), conjugate prior = P(h) s.t. P(h) $\sim$ P(h&#124;D)
-            - P(D&#124;h) 의 분포가 주어졌을때, P(h) 의 분포와 P(h&#124;D) 의 분포가 같은 종류가 되도록 만들어주는 P(h) 의 분포
+            - **P(D&#124;h) 의 분포가 주어졌을때, P(h) 의 분포와 P(h&#124;D) 의 분포가 같은 종류가 되도록 만들어주는 P(h) 의 분포**
         - 의미: MAP 에서 P(h&#124;D) 를 구할수 있도록 함
         - uninformative prior: 가설에 대한 사전지식을 최대한 배제하기 위해 prior 을 uniform distribution 으로 만들어주는 것
         - 종류:
@@ -226,12 +226,12 @@ use_math: true
                     - E(h_i &#124; D) = $\frac{\alpha_{i} + x_i}{\sum_{k=1}^{V} a_k + x_k}$
                 - h_i = E(h_i&#124;D)
 - MLE / MAP: 가설을 찾는/검증하는 방법
-- MLE(maximum likelihood estimate):
+- <span style="color:#872657; font-weight:bold;">MLE(maximum likelihood estimate):</span>
     - 정의:
         - $\arg \max_{h}P(D \vert h)$
         - 데이터의 likelihood 를 maximize 하는 가설 찾기
     - 의미:
-        - 가설을 찾을때 주어진 데이터에서만 정보를 얻음
+        - <span style="color:#872657; font-weight:bold;">가설을 찾으려고 할때 주어진 데이터에서만 정보를 얻음</span>
         - 가설을 확률변수로 보지 않고 deterministic 한 일반변수로 봄
         - 즉, P(h) 라는 것은 존재하지 않는다고 가정
     - 장점:
@@ -242,12 +242,12 @@ use_math: true
             - ex. 동전을 1번 던져서 앞면이 나온걸 보고 앞면이 나올 확률 = 1 인 가설을 선택하는것
     - in ML:
         - 각 iteration 의 $\theta$ 가 주어졌을 때, 여기서 데이터 (X,Y) 가 나왔을 확률 (X 를 각 iteration 의 $\theta$ 의 입력으로 넣었을 때 Y 가 출력될 확률)을 maximize 하는 $\theta$ 를 찾는것
-- MAP(maximum a posteriori):
+- <span style="color:#872657; font-weight:bold;">MAP(maximum a posteriori):</span>
     - 정의:
         - $\arg \max_{h} P(h \vert D) \propto P(D \vert h) * P(h)$
         - 가설의 posterior 을 maximize 하는 가설 찾기
     - 의미:
-        - 가설을 찾으려고 할때 주어진 데이터와 가설에 대한 사전지식에서 정보를 얻음
+        - <span style="color:#872657; font-weight:bold;">가설을 찾으려고 할때 주어진 데이터와 가설에 대한 사전지식에서 정보를 얻음</span>
         - 가설을 확률변수로 보는 것
         - 즉, P(h) 가 존재한다고 가정 (h 를 컨트롤 하는 $\alpha, \beta$ 가 또 있다)
     - 장점:
