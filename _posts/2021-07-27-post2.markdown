@@ -10,26 +10,26 @@ image: /assets/article_images/2021-07-26-post1/wallpaper.jpg
 대학교 1학년때 가장 재밌게 들었던 수업에서 처음 쓴 에세이. 약 4년이 지난 지금 다시 읽어보니 어떻게 이런 생각을 했나 싶다. 최근에 열심히 머리로는 이해하지만 마음으로 받아들일수 없었던 Evidence 과 Hypothesis 의 관계에 대한 내용이었다니, 전혀 기억을 못하고 살았다. 물론 내용 그 자체보다는 White 의 argument 의 논리의 틀에 더 집중했던 것이지만.   
 
 >PHI 203 Introduction to Epistemology and Metaphysics
+>
 >Very Short Paper #1
+>
 >Min Lee
+>
 >Precept 10
 >
 >Fine-Tuning Argument by Roger White
 >1.	If a fact E that we observe stands in need of explanation, and hypothesis H provides a satisfactory explanation of E that is better than any alternative explanation available, then E provides significant evidential support for H.
-2.	That our universe is hospitable to life stands in need of explanation.
-3.	That God adjusted the constants in order to allow for life to develop provides a satisfactory explanation for why our universe is life-permitting.
-4.	There is no comparably satisfying explanation of this fact available.
-5.	Therefore, that our universe is life-permitting provides significant evidential support for theism.
-
-```
-The structural bedrock of this argument is Inference to the Best Explanation(IBF). This principle defines a mutual relationship between an observation(E) and a theory(H) – if a theory serves as the best explanation to an observation, then the observation serves as an evidence to the theory. Here, the observation is the existence of life in our universe, and the theory is theism. 
-
-White starts with a loose criterion for observations worth of explaining: improbability and remarkability. Our case easily fits into this – a particular combination of constants is highly unlikely, and a complex multicellular organism is definitely more incredible than a soup of atoms. Then he introduces the theory of God as universe’s meticulous commander. He solidifies its satisfactory status by answering two objections – reference to God is meaningless only when the observation is as noteworthy as all other possible cases, and although no one knows how he tuned our universe, we still understand why, which is all it matters. Then he establishes its superlative status by invalidating multiverse theory – although more universes would result in more cases like ours, it does not explain what is going on within our universe. When these three premises are framed into IBF, we get a valid conclusion that life’s presence in our world supports theism.
-
-Now, it is true that our universe contains life. But this remarkability obscures an obvious fact: the vast majority of our universe is inhospitable. As far as we know, the earth is the only planet that allows life, and it occupies an infinitesimally small portion of the universe.
-
-A reasonable one may point out that this is actually irrelevant to our discussion, because all White needs is a single remarkable organism to validate his claim. But the fact that universe is mostly non-life diminishes the satisfactory – and therefore, superlative – status of God’s fine-tuning. When we say hospitability is worthy of explanation, we are assuming that life is better than non-life. In such case of life’s supremacy, if God existed, he would have enriched the entire universe with living beings – because he would have known that life is better than non-life (omniscient), and he would have had the capacity to design a universe filled with better versions of everything (omnipotent). Let’s say there are 1,000 versions of clay on a table. One is a Greco-Roman statue, while all others are amorphous lumps. Can we say that the sculptor is almighty? Hardly. If he had the absolute power, then he would have never failed to complete all others.
-
-God’s omnipotence rules out another objection – that all nonliving space is necessary for life to prosper on earth. But since he can do anything, why not render earth self-sustainable? White states that life is “a plausible purpose that a rational agent might have.” But a rational as well as omniscient and omnipotent agent, in order to fulfill his purpose, should have done much better than what we observe. It is possible for God to have failed, but this is not satisfying at all.
-
-```
+>2.	That our universe is hospitable to life stands in need of explanation.
+>3.	That God adjusted the constants in order to allow for life to develop provides a satisfactory explanation for why our universe is life-permitting.
+>4.	There is no comparably satisfying explanation of this fact available.
+>5.	Therefore, that our universe is life-permitting provides significant evidential support for theism.
+>
+>The structural bedrock of this argument is Inference to the Best Explanation(IBF). This principle defines a mutual relationship between an observation(E) and a theory(H) – if a theory serves as the best explanation to an observation, then the observation serves as an evidence to the theory. Here, the observation is the existence of life in our universe, and the theory is theism. 
+>
+>White starts with a loose criterion for observations worth of explaining: improbability and remarkability. Our case easily fits into this – a particular combination of constants is highly unlikely, and a complex multicellular organism is definitely more incredible than a soup of atoms. Then he introduces the theory of God as universe’s meticulous commander. He solidifies its satisfactory status by answering two objections – reference to God is meaningless only when the observation is as noteworthy as all other possible cases, and although no one knows how he tuned our universe, we still understand why, which is all it matters. Then he establishes its superlative status by invalidating multiverse theory – although more universes would result in more cases like ours, it does not explain what is going on within our universe. When these three premises are framed into IBF, we get a valid conclusion that life’s presence in our world supports theism.
+>
+>Now, it is true that our universe contains life. But this remarkability obscures an obvious fact: the vast majority of our universe is inhospitable. As far as we know, the earth is the only planet that allows life, and it occupies an infinitesimally small portion of the universe.
+>
+>A reasonable one may point out that this is actually irrelevant to our discussion, because all White needs is a single remarkable organism to validate his claim. But the fact that universe is mostly non-life diminishes the satisfactory – and therefore, superlative – status of God’s fine-tuning. When we say hospitability is worthy of explanation, we are assuming that life is better than non-life. In such case of life’s supremacy, if God existed, he would have enriched the entire universe with living beings – because he would have known that life is better than non-life (omniscient), and he would have had the capacity to design a universe filled with better versions of everything (omnipotent). Let’s say there are 1,000 versions of clay on a table. One is a Greco-Roman statue, while all others are amorphous lumps. Can we say that the sculptor is almighty? Hardly. If he had the absolute power, then he would have never failed to complete all others.
+>
+>God’s omnipotence rules out another objection – that all nonliving space is necessary for life to prosper on earth. But since he can do anything, why not render earth self-sustainable? White states that life is “a plausible purpose that a rational agent might have.” But a rational as well as omniscient and omnipotent agent, in order to fulfill his purpose, should have done much better than what we observe. It is possible for God to have failed, but this is not satisfying at all.
