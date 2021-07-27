@@ -261,10 +261,10 @@ use_math: true
 ## Backprop
 
 - gradient descent 를 하려면 dL/d$\theta$ 를 모든 $\theta$ 에 대해 구해야하는데, L 은 마지막 레이어의 $\hat y = \theta(x)$ 에 대한 함수이므로, 그 아래 레이어들에 대해 dL/d$\theta$ 를 구하는 방법
-    - dL/d$\theta&_i = dL/d$\hat y$ * d$\hat y$/d$\theta$_n .... d$\theta$_(i+1)/d$\theta$_i
+    - dL/d$\theta%\_i = dL/d$\hat y$ * d$\hat y$/d$\theta$\_n .... d$\theta$\_(i+1)/d$\theta$\_i
     - $\theta$ 가 linear 인 경우, gradient descent 도 필요없고 이에따라 backprop 도 필요없음
 - vanishing gradient
-    - 의미: d$\theta$_(i+1)/d$\theta$_i < 1 이 계속 쌓여서 각 레이어의 gradient 가 0 에 가까워지는 경우
+    - 의미: d$\theta$\_(i+1)/d$\theta$\_i < 1 이 계속 쌓여서 각 레이어의 gradient 가 0 에 가까워지는 경우
         - $\theta$ 가 업데이트가 안됨
     - 상황:
         - 레이어가 많은 경우
@@ -276,7 +276,7 @@ use_math: true
             - if y = ReLU, dy/dx $\in \{0,1\}$
             - if x > 0, 직전 gradient 를 그대로 흘려보내는 것과 같음 (gradient on/off)
         - 2) 레이어들 사이에 residual (skip connection)
-            - skip 된 레이어의 d$\theta$_(i+1)/d$\theta$_i 가 식에서 사라짐
+            - skip 된 레이어의 d$\theta$\_(i+1)/d$\theta$\_i 가 식에서 사라짐
             - transformer 구조에 있음
             - model capacity 도 줄이는 역할
         - 3) LSTM 의 gating network
@@ -286,7 +286,7 @@ use_math: true
                 - c\*h + (1-c)\*x
                 - if c=0, 현재까지의 context 를 버리고 현재 토큰 x 만 보겠다는 뜻
 - exploding gradient
-    - 의미: d$\theta$_(i+1)/d$\theta$_i > 1 이 계속 쌓여서 각 레이어의 gradient 가 $\infty$ 에 가까워지는 경우
+    - 의미: d$\theta$\_(i+1)/d$\theta$\_i > 1 이 계속 쌓여서 각 레이어의 gradient 가 $\infty$ 에 가까워지는 경우
         - $\theta$ 가 너무 커져서 overfitting 이 되거나 loss 가 튀게 됨
     - 상황:
         - dy/dx > 1 인 activation function 을 사용하는 경우
