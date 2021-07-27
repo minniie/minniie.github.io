@@ -199,7 +199,7 @@ use_math: true
     - D(P&#124;&#124;Q) = $E_{X\sim P}(\log \frac{P(X)}{Q(X)}) = \sum_{i=1}^{n}P(x_i) \log \frac{P(x_i)}{Q(x_i)}$
         - LR(x) = P(x)/Q(x) (likelihood ratio: event x 가 Q 보다 P 에서 나왔을 확률)
         - LR(X) = $\prod_{x=1}^{n} P(x_i) / Q(x_i) \approx  \sum_{x=1}^{n} \log \frac{P(x_i)}{Q(x_i)}$
-        - $\begin{eqnarray} D(P\vert \vert Q) &=& \sum_{x=1}^{n} P(x_i)\log \frac{P(x_i)}{Q(x_i)}  \\ &=&  \sum_{x=1}^{n} P(x_i)\log P(x_i) - \sum_{x=1}^{n} P(x_i)\log Q(x_i) \\ \begin{eqnarray}$
+        - $\begin{eqnarray} D(P\vert \vert Q) &=& \sum_{x=1}^{n} P(x_i)\log \frac{P(x_i)}{Q(x_i)}  \\ &=&  \sum_{x=1}^{n} P(x_i)\log P(x_i) - \sum_{x=1}^{n} P(x_i)\log Q(x_i) \\ \end{eqnarray}$
     - prior distribution Q(X) 에서 posterior distribution P(X) 로 이동할때 얻어지는 정보량
     - posterior distribution P(X) 를 prior distribution Q(X) 로 근사할때 손실되는 정보량
     - D(P&#124;&#124;) ≠ D(Q&#124;&#124;P)
@@ -210,10 +210,10 @@ use_math: true
         - n: sample 수
 - Logistic Loss
     - 의미: 모델의 예측이 (0,1) 사이의 하나의 값일경우, 각 정답값과 예측값의 차이
-    - $\begin{aligned}\text{Logistic loss}(f(X), Y) &= -(y \log f(x) + (1-y) \log (1-f(x))) \\& =\begin{cases}
+    - $\text{Logistic loss}(f(X), Y) &= -(y \log f(x) + (1-y) \log (1-f(x))) & =\begin{cases}
         -log(f(x)) & \text{if $y=1$}\\
         -log(1-f(x)) & \text{if $y=0$}
-      \end{cases}\end{aligned}$
+      \end{cases}$
         - ex. 실제 y = 0 이고 f(x) = 0 으로 예측하는 경우 loss = -log(1) = 0
         - Y in CE: one-hot vector
         - Y in logistic loss: {0,1}
@@ -262,7 +262,7 @@ use_math: true
 ## Backprop
 
 - gradient descent 를 하려면 dL/d$\theta$ 를 모든 $\theta$ 에 대해 구해야하는데, L 은 마지막 레이어의 $\hat y = \theta(x)$ 에 대한 함수이므로, 그 아래 레이어들에 대해 dL/d$\theta$ 를 구하는 방법
-    - dL/d$\theta$ i = dL/d$\hat y$ * d$\hat y$/d$\theta$_n .... d$\theta$_(i+1)/d$\theta$_i
+    - dL/d$\theta&_i = dL/d$\hat y$ * d$\hat y$/d$\theta$_n .... d$\theta$_(i+1)/d$\theta$_i
     - $\theta$ 가 linear 인 경우, gradient descent 도 필요없고 이에따라 backprop 도 필요없음
 - vanishing gradient
     - 의미: d$\theta$_(i+1)/d$\theta$_i < 1 이 계속 쌓여서 각 레이어의 gradient 가 0 에 가까워지는 경우
