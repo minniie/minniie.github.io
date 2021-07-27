@@ -22,6 +22,12 @@ $font-sans: Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif
 // Only needed for syntax highlighting
 %vertical-rhythm
   margin-bottom: $rs
+  
+::selection {
+   background: #8B636C;
+   color: #fff;
+}
+  
 
 main
   display: block
@@ -449,8 +455,7 @@ body
       line-height: 25px
       margin-left: 25px
       margin-bottom: 10px
-      padding-top: 5px
-     
+      padding-top: 5px 
     ol li
       list-style-type: decimal
   .bottom-teaser
