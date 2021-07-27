@@ -70,7 +70,7 @@ use_math: true
 - Conditional probability: P(A&#124;B) = P(B&#124;A) * P(A) / P(B)
     - B 가 발생한 상황이 자연에서 새로운 조건으로 주어졌을때, A 가 발생할 확률
     - event space = {A}
-- Marginal probability: P(A) = $\sum_{b \in B} P(A, B=b) = \sum_{b\in B}P(A \vert b) \times P(b)$
+- Marginal probability: P(A) = $\sum_{b \in B} P(A, B=b) = \sum_{b\in B}P(A \vert b) * P(b)$
     - 어떤 확률변수 A 의 prior 을 모를때, 또 다른 확률변수 B 의 각 사건의 prior * 각 사건이 주어졌을때 A 가 발생할 likelihood 로 구할수 있다
     - 어떤 확률변수 A 의 prior 은 모르고 likelihood 만 아는 경우
 - independence: A and B are independent iff P(A&#124;B) = P(A) and P(B&#124;A) = P(B)
@@ -270,7 +270,7 @@ use_math: true
     - 2) MLE: $\argmax_{h} P(D \vert h)$
         - $\frac{d}{dh}P(D \vert h) = 0$ 이 되는 $h$
         - 식을 풀면 $h = \frac{x}{n} = \frac{60}{100}$
-    - 3) MAP: $\argmax_{h}P(h&#124;D) \propto P(D&#124;h) \times P(h)$
+    - 3) MAP: $\argmax_{h}P(h&#124;D) \propto P(D&#124;h) * P(h)$
         - uninformative prior: $\alpha=1, \beta=1$
         - $P(h)\sim beta(1,1)$
         - 식을 풀면 $h = E(h \vert D) = \frac{\alpha+x}{\alpha+\beta+n} = \frac{1+60}{1+1+100} = \frac{61}{102}$
