@@ -228,7 +228,7 @@ use_math: true
 - MLE / MAP: 가설을 찾는/검증하는 방법
 - MLE(maximum likelihood estimate):
     - 정의:
-        - $\argmax_{h}P(D \vert h)$
+        - $\arg \max_{h}P(D \vert h)$
         - 데이터의 likelihood 를 maximize 하는 가설 찾기
     - 의미:
         - 가설을 찾을때 주어진 데이터에서만 정보를 얻음
@@ -244,7 +244,7 @@ use_math: true
         - 각 iteration 의 $\theta$ 가 주어졌을 때, 여기서 데이터 (X,Y) 가 나왔을 확률 (X 를 각 iteration 의 $\theta$ 의 입력으로 넣었을 때 Y 가 출력될 확률)을 maximize 하는 $\theta$ 를 찾는것
 - MAP(maximum a posteriori):
     - 정의:
-        - $\argmax_{h} P(h \vert D) \propto P(D \vert h) * P(h)$
+        - $\arg \max_{h} P(h \vert D) \propto P(D \vert h) * P(h)$
         - 가설의 posterior 을 maximize 하는 가설 찾기
     - 의미:
         - 가설을 찾으려고 할때 주어진 데이터와 가설에 대한 사전지식에서 정보를 얻음
@@ -267,10 +267,10 @@ use_math: true
             - x: 60
         - h: p
         - P(D&#124;h) ~ binomial = $\binom{100}{60}h^{60} * (1-h)^{40}$
-    - 2) MLE: $\argmax_{h} P(D \vert h)$
+    - 2) MLE: $\arg \max_{h} P(D \vert h)$
         - $\frac{d}{dh}P(D \vert h) = 0$ 이 되는 $h$
         - 식을 풀면 $h = \frac{x}{n} = \frac{60}{100}$
-    - 3) MAP: $\argmax_{h}P(h&#124;D) \propto P(D&#124;h) * P(h)$
+    - 3) MAP: $\arg \max_{h}P(h&#124;D) \propto P(D&#124;h) * P(h)$
         - uninformative prior: $\alpha=1, \beta=1$
         - $P(h)\sim beta(1,1)$
         - 식을 풀면 $h = E(h \vert D) = \frac{\alpha+x}{\alpha+\beta+n} = \frac{1+60}{1+1+100} = \frac{61}{102}$
