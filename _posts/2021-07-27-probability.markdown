@@ -197,7 +197,7 @@ use_math: true
     - P(h&#124;D): posterior (데이터를 관측한 후 가설의 분포)
     - conjugate prior:
         - 정의: given P(D&#124;h), conjugate prior = P(h) s.t. P(h) $\sim$ P(h&#124;D)
-            - P(D|h) 의 분포가 주어졌을때, P(h) 의 분포와 P(h|D) 의 분포가 같은 종류가 되도록 만들어주는 P(h) 의 분포
+            - P(D&#124;h) 의 분포가 주어졌을때, P(h) 의 분포와 P(h&#124;D) 의 분포가 같은 종류가 되도록 만들어주는 P(h) 의 분포
         - 의미: MAP 에서 P(h&#124;D) 를 구할수 있도록 함
         - uninformative prior: 가설에 대한 사전지식을 최대한 배제하기 위해 prior 을 uniform distribution 으로 만들어주는 것
         - 종류:
@@ -210,7 +210,7 @@ use_math: true
                         - 1의 횟수, 0의 횟수에 대한 사전지식을 0 으로 설정
                     - E(h) = $\frac{\alpha}{\alpha+\beta}$
                 - posterior P(h&#124;D) ~ Beta($\alpha+x, \beta+n-x$)
-                - x: $\{0,1\}$ 중 1이 발생한 실험 횟수
+                - x: {0,1} 중 1이 발생한 실험 횟수
                     - n: 전체 실험 횟수
                     - E(h&#124;D) = $\frac{\alpha + x}{\alpha + x + \beta + n - x} = \frac{\alpha + x}{\alpha + \beta + n}$
                 - h = E(h&#124;D)
@@ -223,7 +223,7 @@ use_math: true
                     - E(h_i) = $\frac{\alpha_i}{\sum_{k=1}^{V} a_k}$
                 - posterior P(h&#124;D) ~ Dirichlet($\alpha + x$)
                     - $x = [x_1, ..., x_V]$
-                    - E(h_i \vert D) = $\frac{\alpha_{i} + x_i}{\sum_{k=1}^{V} a_k + x_k}$
+                    - E(h_i &#124; D) = $\frac{\alpha_{i} + x_i}{\sum_{k=1}^{V} a_k + x_k}$
                 - h_i = E(h_i&#124;D)
 - MLE / MAP: 가설을 찾는/검증하는 방법
 - MLE(maximum likelihood estimate):
@@ -267,7 +267,7 @@ use_math: true
             - x: 60
         - h: p
         - P(D&#124;h) ~ binomial = $\binom{100}{60}h^{60} * (1-h)^{40}$
-    - 2) MLE: $\argmax_{h}P(D|h)$
+    - 2) MLE: $\argmax_{h} P(D \vert h)$
         - $\frac{d}{dh}P(D \vert h) = 0$ 이 되는 $h$
         - 식을 풀면 $h = \frac{x}{n} = \frac{60}{100}$
     - 3) MAP: $\argmax_{h}P(h&#124;D) \propto P(D&#124;h) \times P(h)$
