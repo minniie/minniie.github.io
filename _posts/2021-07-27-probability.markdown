@@ -211,4 +211,18 @@ use_math: true
                     - E(h) = $\frac{\alpha}{\alpha+\beta}$
                 - posterior P(h&#124;D) ~ Beta($\alpha+x, \beta+n-x$)
                 - x: $\{0,1\}$ 중 1이 발생한 실험 횟수
-
+                    - n: 전체 실험 횟수
+                    - E(h&#124;D) = $\frac{\alpha+x}{\alpha+x+\beta+n-x} = \frac{\alpha+x}{\alpha+\beta+n}$
+                - h = E(h&#124;D)
+            - given P(D&#124;h) ~ multinomial:
+                - prior P(h) ~ Dirichlet($\alpha$)
+                    - $\alpha \in R^V$
+                        - class i 에 대한 사전지식: $\alpha_i-1$
+                    - uninformative prior: $\alpha = [1]^V$
+                        - 각 class 에 대한 사전지식을 0 으로 설정
+                    - E(h_i) = $\frac{{\alpha}_i}{\sum_{k=1}^{V}a_k}$
+                - posterior P(h&#124;D) ~ Dirichlet($\alpha + x$)
+                    - $x = [x_1, ..., x_V]$
+                    - E(h_i|D) = $\frac{{\alpha}_i+x_i}{\sum_{k=1}^{V}a_k+x_k}$
+                - h_i = E(h_i&#124;D)
+- MLE / MAP: 가설을 찾는/검증하는 방법
