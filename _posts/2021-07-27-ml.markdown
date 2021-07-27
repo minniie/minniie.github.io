@@ -7,11 +7,6 @@ tags: notes
 image: /assets/article_images/2021-07-27-ml/wallpaper.JPG
 use_math: true
 ---
-$\begin{eqnarray} 
-y &=& x^4 + 4      \nonumber \\
-&=& (x^2+2)^2 -4x^2 \nonumber \\
-&\le&(x^2+2)^2    \nonumber
-\end{eqnarray}$
 
 ## Machine learning
 
@@ -204,7 +199,7 @@ y &=& x^4 + 4      \nonumber \\
     - D(P&#124;&#124;Q) = $E_{X\sim P}(\log \frac{P(X)}{Q(X)}) = \sum_{i=1}^{n}P(x_i) \log \frac{P(x_i)}{Q(x_i)}$
         - LR(x) = P(x)/Q(x) (likelihood ratio: event x 가 Q 보다 P 에서 나왔을 확률)
         - LR(X) = $\prod_{x=1}^{n} P(x_i) / Q(x_i) \approx  \sum_{x=1}^{n} \log \frac{P(x_i)}{Q(x_i)}$
-        - $\begin{aligned} D(P \vert \vert Q) &= \sum_{x=1}^{n} P(x_i)\log \frac{P(x_i)}{Q(x_i)}  \\ & =  \sum_{x=1}^{n} P(x_i)\log P(x_i) - \sum_{x=1}^{n} P(x_i)\log Q(x_i) \end{aligned}$
+        - $D(P \vert \vert Q) &= \sum_{x=1}^{n} P(x_i)\log \frac{P(x_i)}{Q(x_i)} =  \sum_{x=1}^{n} P(x_i)\log P(x_i) - \sum_{x=1}^{n} P(x_i)\log Q(x_i) $
     - prior distribution Q(X) 에서 posterior distribution P(X) 로 이동할때 얻어지는 정보량
     - posterior distribution P(X) 를 prior distribution Q(X) 로 근사할때 손실되는 정보량
     - D(P&#124;&#124;) ≠ D(Q&#124;&#124;P)
@@ -215,8 +210,10 @@ y &=& x^4 + 4      \nonumber \\
         - n: sample 수
 - Logistic Loss
     - 의미: 모델의 예측이 (0,1) 사이의 하나의 값일경우, 각 정답값과 예측값의 차이
-    - $\begin{aligned}\text{Logistic loss}(f(X), Y) &= -(y \log f(x) + (1-y) \log (1-f(x))) \\& =\begin{cases} -log(f(x)) & \text{if $y=1$}\\ -log(1-f(x)) & \text{if $y=0$} \end{cases}\end{aligned}$
-        - ex. 실제 y = 0 이고 f(x) = 0 으로 예측하는 경우 loss = -log(1) = 0
+    - $\text{Logistic loss}(f(X), Y) &= -(y \log f(x) + (1-y) \log (1-f(x)))$
+        - if y=1, -logf(x)
+        - if y=0, -log(1-f(x))
+            - ex. 실제 y = 0 이고 f(x) = 0 으로 예측하는 경우 loss = -log(1) = 0
         - Y in CE: one-hot vector
         - Y in logistic loss: {0,1}
         - binary classification 의 경우 CE == logistic loss
