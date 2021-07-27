@@ -6,7 +6,7 @@ gems:
 # Site settings
 title: "Min's"
 description: > # this means to ignore newlines until "email:"
-   thoughts
+   thoughts, notes
 
 email: mlee981001@gmail.mail
 #blog logo
