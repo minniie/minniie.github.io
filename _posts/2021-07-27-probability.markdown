@@ -217,4 +217,6 @@ use_math: true
             - given P(D&#124;h) ~ multinomial:
                 - prior P(h) ~ Dirichlet($\alpha$)
                     - $\alpha \in R^V$
-
+                        - class i 에 대한 사전지식: $\alpha_{i}-1$
+                    - uninformative prior: $\alpha = [1]^V$
+                        - 각 class 에 대한 사전지식을 0 으로 설정
