@@ -34,7 +34,7 @@ layout: default
     <h5 class="index-headline featured"><span>Thoughts</span></h5>
 
     <div class="container featured">
-      {% for post in site.tags.thoughts %}
+      {% for post in site.tags.thoughts reversed %}
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
           <div class="article-item">
             <header class="post-header">
@@ -57,7 +57,7 @@ layout: default
     <h5 class="index-headline normal"><span>Notes</span></h5>
                                      
     <div class="cf frame">
-      {% for post in site.tags.notes %}
+      {% for post in site.tags.notes reversed %}
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
           <div class="article-item">
             <header class="post-header">
