@@ -210,4 +210,5 @@ use_math: true
                         - 1의 횟수, 0의 횟수에 대한 사전지식을 0 으로 설정
                     - E(h) = $\frac{\alpha}{\alpha+\beta}$
                 - posterior P(h&#124;D) ~ Beta($\alpha+x, \beta+n-x$)
+                - x: $\{0,1\}$ 중 1이 발생한 실험 횟수
 
