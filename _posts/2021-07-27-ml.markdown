@@ -11,7 +11,7 @@ $$ D(P \vert \vert Q) &= \sum_{x=1}^{n} P(x_i)\log \frac{P(x_i)}{Q(x_i)}  \\ & =
 
 \\[\begin{align*} D(P \vert \vert Q) &= \sum_{x=1}^{n} P(x_i)\log \frac{P(x_i)}{Q(x_i)}  \\ & =  \sum_{x=1}^{n} P(x_i)\log P(x_i) - \sum_{x=1}^{n} P(x_i)\log Q(x_i) \end{align*}\\]
 
-$$D(P \vert \vert Q) &= \sum_{x=1}^{n} P(x_i)\log \frac{P(x_i)}{Q(x_i)}  \\ & =  \sum_{x=1}^{n} P(x_i)\log P(x_i) - \sum_{x=1}^{n} P(x_i)\log Q(x_i)$$
+$$ D(P \vert \vert Q) &= \sum_{x=1}^{n} P(x_i)\log \frac{P(x_i)}{Q(x_i)}  \\ & =  \sum_{x=1}^{n} P(x_i)\log P(x_i) - \sum_{x=1}^{n} P(x_i)\log Q(x_i) $$
 
 $$\begin{eqnarray*}D(P \vert \vert Q) &= \sum_{x=1}^{n} P(x_i)\log \frac{P(x_i)}{Q(x_i)}  \\ & =  \sum_{x=1}^{n} P(x_i)\log P(x_i) - \sum_{x=1}^{n} P(x_i)\log Q(x_i) \end{eqnarray*}}$$
 
