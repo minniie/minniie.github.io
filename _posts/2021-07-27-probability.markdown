@@ -223,5 +223,5 @@ use_math: true
                     - E(h_i) = $\frac{{\alpha}_i}{\sum_{k=1}^{V}a_k}$
                 - posterior P(h&#124;D) ~ Dirichlet($\alpha + x$)
                     - $x = [x_1, ..., x_V]$
-                    - E(h_i \vert D) = $\frac{\alpha_i+x_i}{\sum_{k=1}^{V}a_k+x_k}$
+                    - E(h_i \vert D) = $\frac{\alpha_{i} + x_i}{\sum_{k=1}^{V} a_k + x_k}$
                 - h_i = E(h_i&#124;D)
