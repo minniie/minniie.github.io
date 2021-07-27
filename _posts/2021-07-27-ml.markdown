@@ -7,13 +7,6 @@ tags: notes
 image: /assets/article_images/2021-07-27-ml/wallpaper.JPG
 use_math: true
 ---
-$$ D(P \vert \vert Q) &= \sum_{x=1}^{n} P(x_i)\log \frac{P(x_i)}{Q(x_i)}  \\ & =  \sum_{x=1}^{n} P(x_i)\log P(x_i) - \sum_{x=1}^{n} P(x_i)\log Q(x_i)  $$
-
-\\[\begin{align*} D(P \vert \vert Q) &= \sum_{x=1}^{n} P(x_i)\log \frac{P(x_i)}{Q(x_i)}  \\ & =  \sum_{x=1}^{n} P(x_i)\log P(x_i) - \sum_{x=1}^{n} P(x_i)\log Q(x_i) \end{align*}\\]
-
-$$ D(P \vert \vert Q) &= \sum_{x=1}^{n} P(x_i)\log \frac{P(x_i)}{Q(x_i)}  \\ & =  \sum_{x=1}^{n} P(x_i)\log P(x_i) - \sum_{x=1}^{n} P(x_i)\log Q(x_i) $$
-
-$$\begin{eqnarray*}D(P \vert \vert Q) &= \sum_{x=1}^{n} P(x_i)\log \frac{P(x_i)}{Q(x_i)}  \\ & =  \sum_{x=1}^{n} P(x_i)\log P(x_i) - \sum_{x=1}^{n} P(x_i)\log Q(x_i) \end{eqnarray*}}$$
 
 ## Machine learning
 
@@ -218,8 +211,8 @@ $$\begin{eqnarray*}D(P \vert \vert Q) &= \sum_{x=1}^{n} P(x_i)\log \frac{P(x_i)}
 - Logistic Loss
     - 의미: 모델의 예측이 (0,1) 사이의 하나의 값일경우, 각 정답값과 예측값의 차이
     - $\text{Logistic loss}(f(X), Y) = -(y \log f(x) + (1-y) \log (1-f(x)))$
-        - if y=1, -logf(x)
-        - if y=0, -log(1-f(x))
+        - if y=1, loss = -logf(x)
+        - if y=0, loss = -log(1-f(x))
             - ex. 실제 y = 0 이고 f(x) = 0 으로 예측하는 경우 loss = -log(1) = 0
         - Y in CE: one-hot vector
         - Y in logistic loss: {0,1}
