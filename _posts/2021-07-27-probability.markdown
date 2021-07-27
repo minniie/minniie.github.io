@@ -214,4 +214,7 @@ use_math: true
                     - n: 전체 실험 횟수
                     - E(h&#124;D) = $\frac{\alpha + x}{\alpha + x + \beta + n - x} = \frac{\alpha + x}{\alpha + \beta + n}$
                 - h = E(h&#124;D)
-           
+            - given P(D&#124;h) ~ multinomial:
+                - prior P(h) ~ Dirichlet($\alpha$)
+                    - $\alpha \in R^V$
+
