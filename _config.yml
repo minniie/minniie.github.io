@@ -26,7 +26,7 @@ url: "https://minniie.github.io/" # the base hostname & protocol for your site
 baseurl: ""
 #used to display twitter cards
 #twitter_handle: '@dirkfabisch'
-remote_theme: dirkfabisch/mediator
+#remote_theme: dirkfabisch/mediator
 
 #fill in disqus shortname to use disqus
 #disqus: disqus-shortname
