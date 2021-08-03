@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "의식의 흐름 #1"
+title:  "의식의 흐름"
 date:   2021-07-26 22:58:00
 categories: 의식의 흐름
 tags: thoughts
