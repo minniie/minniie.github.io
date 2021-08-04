@@ -15,21 +15,13 @@ use_math: true
 **`보편적`** | 1 <br /> 2 <br />  | 1 <br /> 2 
 </center>
 
-<p align="center"></p>
-<table>
-    <thead>
-        <tr>
-            <th align="left">Column1</th>
-            <th align="center">Column1</th>
-            <th align="right">Column1</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td align="left">Column1</td>
-            <td align="center">Column1</td>
-            <td align="right">Column1</td>
-        </tr>
-    </tbody>
-</table>
-<p></p>
+<div class="datatable-begin"></div>
+
+Food    | Description                           | Category | Sample type
+------- | ------------------------------------- | -------- | -----------
+Apples  | A small, somewhat round ...           | Fruit    | Fuji
+Bananas | A long and curved, often-yellow ...   | Fruit    | Snow
+Kiwis   | A small, hairy-skinned sweet ...      | Fruit    | Golden
+Oranges | A spherical, orange-colored sweet ... | Fruit    | Navel
+
+<div class="datatable-end"></div>
