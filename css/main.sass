@@ -33,18 +33,20 @@ main
 
 table
   display: block
-  margin: padding
-  // margin-left: 30px
-  // margin-right: 30px
-  max-width: 50%
+  margin-left: 30px
+  margin-right: 30px
+  width: 50%
   border: 1px solid #FFF	
   border-collapse: collapse
 
 
 
 tbody tr
-  &:nth-child(odd) td:nth-child(even), &:nth-child(even) td:nth-child(odd)
-    background-color: #bbdefb
+  &:nth-child(2n+1) td:nth-child(even), &:nth-child(even) td:nth-child(2n+1)
+    background-color: #EEE0E5
+    
+  &:nth-child(even) td:nth-child(2n+1), &:nth-child(2n+1) td:nth-child(even)
+    background-color: #EEE9E9
 
  
   
