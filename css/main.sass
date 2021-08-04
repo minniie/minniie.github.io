@@ -38,20 +38,13 @@ table
   max-width: 100%
   border: 1px solid #FFF	
   border-collapse: collapse
-  
-th, td
-  border: 1px solid #777
-  
-thead tr
-  background-color: #0d47a1
-  color: #ffffff
 
-tbody tr
-  &:nth-child(2n)
-    background-color: #bbdefb
+  
+th:nth-child(2n), td:nth-child(2n+1)
+  background-color: #bbdefb
 
-  &:nth-child(2n+1)
-    background-color: #e3f2fd
+th:nth-child(2n+1), td:nth-child(2n)
+  background-color: #e3f2fd
   
 body
   font-family: $font-sans
