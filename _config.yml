@@ -20,7 +20,7 @@ name: 'Min Lee'
 author: 'Min Lee'
 author_image: "/assets/images/profile.jpg"
 
-paginate:	5
+paginate:	10
 
 url: "https://minniie.github.io/" # the base hostname & protocol for your site
 baseurl: ""
