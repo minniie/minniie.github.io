@@ -8,9 +8,11 @@ image: /assets/article_images/2021-08-04-post3/wallpaper.jpg
 use_math: true
 ---
 
+<center>
+ 
  특성 | **`연속적`** | **`일시적`**
 :---:|:---:|:---:
 **`특수적`** |1 <br /> 2 <br />  | 1 <br /> 2 
 **`보편적`** | 1 <br /> 2 <br />  | 1 <br /> 2 
 
-
+</center>
