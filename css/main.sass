@@ -45,17 +45,21 @@ th
 td
   padding: 20px
   text-align: center
+
+tr:nth-child(1) td:first-child
+  background: #FFF
+tr:nth-child(2) td:first-child
+  background: #FFF
+tr:nth-child(1) td:nth-child(2)
+  background: #EEE9E9
+tr:nth-child(2) td:nth-child(2)
+  background: #EEE0E5
+tr:nth-child(1) td:nth-child(3)
+  background: #EEE0E5
+tr:nth-child(2) td:nth-child(3)
   background: #EEE9E9
 
-tbody tr
-  // first fix
-  &:nth-child(2n+1) td:nth-child(even), &:nth-child(even) td:nth-child(2n+1)
-    background-color: #EEE0E5
-    
-tr:nth-child(1) td:first-child
-  background-color: #bbdefb
-tr:nth-child(2) td:first-child
-  background-color: #bbdefb
+
   
 body
   font-family: $font-sans
