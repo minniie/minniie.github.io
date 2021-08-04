@@ -40,12 +40,13 @@ table
   border: 1px solid #FFF	
   border-collapse: collapse
 
-  
-th:nth-child(2n+2), td:nth-child(2n+2)
-  background-color: #EEE0E5
 
-th:nth-child(2n+3), td:nth-child(2n+3)
-  background-color: #EEE9E9
+
+tbody tr
+  &:nth-child(odd) td:nth-child(even), &:nth-child(even) td:nth-child(odd)
+    background-color: #bbdefb
+
+ 
   
 
   
