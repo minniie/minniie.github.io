@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-bio: <span style="color:#E3A869; font-weight:bold;">Princeton '21+1</span>
+bio: <span style="color:#E3A869; font-weight:bold;">Princeton '21+2</span>
 
 likes: `털 많은 고양이` `재즈` `사람들 만나기` `낮잠` `맥주` `이쁜 악세사리` `힙합` `크리스마스` `도시의 몽글몽글 불빛` `머릿속이 글로 정리된 상태`
 
